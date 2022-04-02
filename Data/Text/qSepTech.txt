@@ -1,0 +1,87 @@
+separation techniques
+
+Quran------
+            juz------*
+                    page------%
+                                      Ayah-------?
+                                      Ayah-------?
+                            Surah------$
+                                      Ayah-------?
+                                      Ayah-------?
+                            Surah------$
+                                      Ayah-------?
+                                      Ayah-------?
+                    page------%
+                                      Ayah-------?
+                                      Ayah-------?
+                            Surah------$
+                                      Ayah-------?
+                                      Ayah-------?
+                            Surah------$
+                                      Ayah-------?
+                                      Ayah-------?
+            juz------*
+                    page------%
+                                      Ayah-------?
+                                      Ayah-------?
+                            Surah------$
+                                      Ayah-------?
+                                      Ayah-------?
+                            Surah------$
+                                      Ayah-------?
+                                      Ayah-------?
+                    page------%
+                                      Ayah-------?
+                                      Ayah-------?
+                            Surah------$
+                                      Ayah-------?
+                                      Ayah-------?
+                            Surah------$
+                                      Ayah-------?
+                                      Ayah-------?
+
+
+Quran------
+            juz------*
+                    Surah------%
+                                      Ayah?
+                                      Ayah?
+                            Page------$
+                                      Ayah?
+                                      Ayah?
+                            Page------$
+                                      Ayah?
+                                      Ayah?
+                    Surah------%
+                                      Ayah?
+                                      Ayah?
+                            Page------$
+                                      Ayah?
+                                      Ayah?
+                            Page------$
+                                      Ayah?
+                                      Ayah?
+
+            juz------*
+                    Surah------%
+                                      Ayah?
+                                      Ayah?
+                            Page------$
+                                      Ayah?
+                                      Ayah?
+                            Page------$
+                                      Ayah?
+                                      Ayah?
+                    Surah------%
+                                      Ayah?
+                                      Ayah?
+                            Page------$
+                                      Ayah?
+                                      Ayah?
+                            Page------$
+                                      Ayah?
+                                      Ayah?
+
+new separation:
+	name whether Ayah or Surah : Ayah : Surah Number : Ayah Number : Juz Number : Page Number
+
