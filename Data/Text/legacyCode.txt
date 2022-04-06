@@ -1,0 +1,9 @@
+embed command test:
+    @commands.command(pass_context=True)
+    async def testEmbed(self, ctx, *args):
+
+        embed = discord.Embed(title="Test Title", url="https://something.com",
+                            description="test description", color=discord.Color.blue())
+        embed.set_author(name="RealDrewData", url="https://something.com",
+                         icon_url="https://cdn.discordapp.com/avatars/645688850500550677/f91d836817fe21946cf10e6e9ad20ee3?size=512")
+        await ctx.message.reply(embed=embed)

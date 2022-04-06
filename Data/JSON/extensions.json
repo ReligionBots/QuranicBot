@@ -1,12 +1,21 @@
 {
     "extensions":[
         {
+            "extName": "Help",
+            "extension": "help"
+        },
+        {
             "extName":"Quran",
             "extension": "q"
         },
         {
             "extName": "Translations",
             "extension": "t"
+        },
+        {
+            "extName": "Tafsir",
+            "extension": "tafsir"
         }
+
     ]
 }
