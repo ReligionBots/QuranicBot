@@ -1,0 +1,12 @@
+{
+    "extensions":[
+        {
+            "extName":"Quran",
+            "extension": "q"
+        },
+        {
+            "extName": "Translations",
+            "extension": "t"
+        }
+    ]
+}

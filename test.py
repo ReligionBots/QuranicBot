@@ -1,49 +1,27 @@
+import http.client
 import requests as req
 import json
 
-localhost = "localhost:3003"
 
-# def drop_lowest(scores, drop_number):
-#     data = scores.copy()
-#     index = 0
-#     for i in data: 
-#         print(i)
-#         for y in i:
-#             print(y)
-            
-#             for x in drop_number:
-#                 print (y,x)
-#                 if y == x:
-#                     scores[index].pop(index)
-#                     print("removed")
-                
-#             print("separated")
-#         index = index + 1
-#     print(scores)
+conn = http.client.HTTPSConnection("api.quran.com")
+# conn = http.client.HTTPConnection("api.alquran.cloud")
+payload = "{}"
+
+conn.request("GET", f"/api/v4/verses/by_chapter/100?language=en&words=true&page=1")
+
+res = conn.getresponse()
+data = res.read()
+newData = json.loads(data.decode("utf-8"))
+printing = ""
+index = 0
+for i in newData['verses']:
+    for j in i['words']:
+        printing = printing +" "+ j['translation']['text'] 
+    index = index + 1
     
-#     pass
-
-# scores = [[10,9, 7, 8],[1,2,1,0],[50,50,50,50],[75, 100]]
-# drop_number = [1,2,1,0]
-# drop_lowest(scores, drop_number)
+print(f"ayahs: {printing}")
+# print(data.text)
 
 
-getQ = req.get(f"http://{localhost}/quran/get")
 
-print(json.loads(getQ.text))
-# requestedData = json.loads(getQ.text)
-
-# array = []
-
-# for i in requestedData:
-#     array = i['TranslationId'] 
-
-
-# for i in array: 
-#     try:
-#         getQ = req.delete(f"http://localhost:3003/quran/delete/{i}/")
-#         print(getQ)
-#     except Exception as e:
-#         print(e)
-    
 

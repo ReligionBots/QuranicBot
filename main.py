@@ -9,12 +9,11 @@ load_dotenv()
 TOKEN = os.getenv('TOKEN')
 
 # here we are opeing the extensions file to get the extension details
-extData = ut.readJSON(ut.directory['extJSON'])
-# here prefixes to write down the prefix we need, will be replaced later
-dumData = ut.readJSON(ut.directory['prefixJSON'])
+ext_data = ut.readJSON(ut.directory['extJSON'])
+
     
 # we make the bot and put the prefix
-bot = commands.Bot(command_prefix=ut.getPrefix)
+bot = commands.Bot(command_prefix=ut.getPrefix, activity = discord.Game(name="~help"))
 bot.remove_command("help") # for removing the main help command
 
 
@@ -22,7 +21,7 @@ bot.remove_command("help") # for removing the main help command
 # main function for loading other extensions
 def main():     
     # Assigning main extensions
-    extensions = extData['extensions']
+    extensions = ext_data['extensions']
     # we go through each extension that we have of the cogs and load them
     for extension in extensions:
         ext = extension['extension']
@@ -33,13 +32,13 @@ def main():
                 else:
                     bot.load_extension(f"Cogs.{ext}")
         except Exception as errors:
-            print(f'{ext} cannot be loaded. {errors}')
+            print(f'{errors}')
     
     bot.run(TOKEN)            
 
 
 
-if __name__ == '__main__': 
+if __name__ == '__main__':
     main()
 
 

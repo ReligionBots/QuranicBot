@@ -94,14 +94,14 @@ def updateJSON(directory, newData):
 # a function for getting server prefix
 
 
-# def getPrefix(client, message):
-#     prefixes = readJSON(ut.readJSON[directory['']])
-#     allPrefixes = prefixes['prefixes']
-#     for i in allPrefixes:
-#         if i['guild'] == str(message.guild.id):
-#             return i['prefix']
+def getPrefix(client, message):
+    getReq = req.get("http://localhost:3003/pre/get")
+    prefixes = json.loads(getReq.text)
+    for i in prefixes:
+        if i['guild'] == str(message.guild.id):
+            return i['prefix']
 
-#     return allPrefixes[0]['prefix']
+    return prefixes[0]['prefix']
 
 # a function for creating server prefixes
 
