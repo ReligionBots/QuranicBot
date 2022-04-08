@@ -1,9 +1,9 @@
-import os
 import json
 import discord
 import asyncio
 import http.client
-import requests as req
+import datetime
+# import requests as req
 
 from discord.ext import tasks, commands
 # from Utils import utils as ut
@@ -46,7 +46,7 @@ class Quran(commands.Cog):
         embed.set_author(name=f"{name}", url=url_2,icon_url=icon_url)
                     
         embed.set_footer(text=f"Number of Ayahs In The Surah: {len(data['data']['ayahs'])}")
-        
+        embed.timestamp = datetime.datetime.now().astimezone()
         return embed
     
     def errorEmbed(self, title, error):
@@ -55,13 +55,7 @@ class Quran(commands.Cog):
     @commands.command(pass_context=True)
     async def Quran(self, ctx, *args):
         if len(args) >= 2:
-            logics = (
-                args[1],
-                "range" in args[0], 
-                '-' in args[1],
-                ":" in args[1],
-                args[1][0].isnumeric()
-            )
+            logics = (args[1],"range" in args[0], '-' in args[1],":" in args[1],args[1][0].isnumeric())
         else:
             pass
         # conn = http.client.HTTPSConnection("api.quran.com")
@@ -69,7 +63,9 @@ class Quran(commands.Cog):
             if args[0][0].isnumeric():
                 if ":" in args[0]:
                     nums = args[0].split(":")
-                   
+                    if int(nums[0]) > 114 or int(nums[0]) < 1:
+                        await ctx.message.reply(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Number Chosen For The Surah"))
+                        return
                     req_data = self.request(nums[0])
                     if len(req_data['data']['ayahs']) < int(nums[1]) - 1:
                         await ctx.message.reply(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Ayah Number Chosen For The Surah"))

@@ -14,6 +14,7 @@ class Tafsirs(commands.Cog):
 
     @commands.command(pass_context=True)
     async def tafsirQuran(self, ctx, *args):
+        
         pass
 
 

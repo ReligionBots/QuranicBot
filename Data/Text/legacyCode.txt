@@ -7,3 +7,26 @@ embed command test:
         embed.set_author(name="RealDrewData", url="https://something.com",
                          icon_url="https://cdn.discordapp.com/avatars/645688850500550677/f91d836817fe21946cf10e6e9ad20ee3?size=512")
         await ctx.message.reply(embed=embed)
+
+
+all embeding:
+    	embed = discord.Embed(
+			title='Hello',
+			description='This is a embed',
+			colour=discord.Colour.purple()
+			)
+        #setting footer
+        embed.set_footer(text='This is a footer')
+        #setting image
+        embed.set_image(url="https://www.howtogeek.com/wpcontent/uploads/2021/01/windows_hello_hero_2.jpg?width=1198&trim=1,1&bg-color=000&pad=1,1")
+        #setting thumbnail
+        embed.set_thumbnail(url="https://www.techopedia.com/images/uploads/6e13a6b3-28b6-454a-bef3-92d3d5529007.jpeg")
+        #Setting timestamp
+	embed.timestamp = datetime.datetime.now()
+       #adding fields
+        embed.add_field(name="field",value='value',inline=False)
+	embed.add_field(name="field1",value='value1',inline=True)
+	embed.add_field(name="field2",value='value2',inline=True)
+
+        # sending the embed
+        await message.channel.send(embed=embed)
