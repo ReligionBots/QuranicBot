@@ -39,13 +39,14 @@ class Quran(commands.Cog):
         return json.loads(data.decode("utf-8"))
     
     def setInitEmbed(self,data):
-        url_1, url_2, icon_url = "https://something.com", "https://quran.com/", "https://cdn.discordapp.com/avatars/958426940581232660/4e1e08d2e06568022f845afcf7cc7b9a?size=512"
+        new_data = data['data']
+        url_1, url_2, icon_url = f"https://quran.com/{new_data['number']}", "https://quran.com/", "https://cdn.discordapp.com/avatars/958426940581232660/4e1e08d2e06568022f845afcf7cc7b9a?size=512"
         embed = discord.Embed(
-            title=f"{data['data']['name']}", url=url_1, color=0x2C2F33)
-        name = data['data']['edition']['name']
+            title=f"{new_data['name']}", url=url_1, color=0x2C2F33)
+        name = new_data['edition']['name']
         embed.set_author(name=f"{name}", url=url_2,icon_url=icon_url)
                     
-        embed.set_footer(text=f"Number of Ayahs In The Surah: {len(data['data']['ayahs'])}")
+        embed.set_footer(text=f"Number of Ayahs In The Surah: {len(new_data['ayahs'])}")
         embed.timestamp = datetime.datetime.now().astimezone()
         return embed
     
@@ -54,13 +55,13 @@ class Quran(commands.Cog):
     
     @commands.command(pass_context=True)
     async def Quran(self, ctx, *args):
-        if len(args) >= 2:
-            logics = (args[1],"range" in args[0], '-' in args[1],":" in args[1],args[1][0].isnumeric())
+        if '-' in args[0]:
+            logics = (args[0], '-' in args[0],":" in args[0],args[0][0].isnumeric())
         else:
             pass
         # conn = http.client.HTTPSConnection("api.quran.com")
         if args:
-            if args[0][0].isnumeric():
+            if args[0][0].isnumeric() and not '-' in args[0]:
                 if ":" in args[0]:
                     nums = args[0].split(":")
                     if int(nums[0]) > 114 or int(nums[0]) < 1:
@@ -80,7 +81,7 @@ class Quran(commands.Cog):
                     await ctx.message.reply(embed=embed)
                     
             elif all(logics):
-                string = args[1].split(":")
+                string = args[0].split(":")
                 ranges = string[1].split("-") # this will split the ayah ranges selected
                 surah = string[0]   # this is the surah
                 start, end = int(ranges[0]),int(ranges[1])

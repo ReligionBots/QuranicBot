@@ -30,3 +30,11 @@ all embeding:
 
         # sending the embed
         await message.channel.send(embed=embed)
+
+try and catch:
+          try:
+            json_data = req.get(
+                f"https://api.quran.com/api/v4/verses/by_chapter/{chapter}?language=en&words=false&translations={lang_details['id']}&page={index}")
+                verses = json.loads(json_data.text)
+            except req.exceptions.RequestException as e:  # This is the correct syntax
+                raise SystemExit(e)

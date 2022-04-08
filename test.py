@@ -3,58 +3,43 @@ import requests as req
 import json
 from Utils import utils as ut
 
-def requestLan(language,chapter):
-    languages = ut.readJSON(ut.directory['transJSON'])
-    lang_details = None
-    for i in languages:
-        logics = (i['lang_all_lower'] == language.lower(),
-                    i['iso_code'] == language.lower())
-        if any(logics):
-            lang_details = i
-            break
-    if lang_details == None:
-       return
-    try:
-        json_data = req.get(
-            f"https://api.quran.com/api/v4/chapters/{chapter}")
-        chapter_details = json.loads(json_data.text)
-    except req.exceptions.RequestException as e:  # This is the correct syntax
-        raise SystemExit(e)
 
-    allVerses = {
-        "verses": [],
-        "chapter_details": chapter_details,
-        "translation_details": lang_details
-    }
-    reach, index = False, 1
-    while not reach:
-        try:
-            json_data = req.get(
-                f"https://api.quran.com/api/v4/verses/by_chapter/{chapter}?language=en&words=false&translations={lang_details['id']}&page={index}")
-            verses = json.loads(json_data.text)
-        except req.exceptions.RequestException as e:  # This is the correct syntax
-            raise SystemExit(e)
+text = "And ˹remember˺ when We said to the angels, “Prostrate before Adam,”<sup foot_note=76385>1</sup> so they all did—but not Iblîs,<sup foot_note=76386>2</sup> who refused and acted arrogantly,<sup foot_note=76387>3</sup> becoming unfaithful."
 
-        if len(verses['verses']) == 0:
-            reach = True
-            break
-        else:
-            pageVerse = verses['verses']
 
-            for i in pageVerse:
-                allVerses['verses'].append(i)
-            index += 1
+def deleteWords():
 
-    return allVerses
+    return 
+
+def textCleansing(text):
+    count, index, start, end, new_str_1, new_str_2 =0, 0, None, None, "", ""
+    new_text = text
+    for i in range(len(text)):
+        if count > 0:
+            if text[i] == ">" and not index == 2 :
+                index += 1
+                end = i
+            elif index == 2:
+                new_str_1 = text[start:end+1]
+                print(new_str_1)
+                new_text = new_text.replace(new_str_1.strip(), " ")
+                count, index = 0, 0
+                pass
+        elif text[i] == "<":
+            start = i
+            count += 1
+            
+    return new_text
 
 
 
-data = requestLan("ku", 1)
+new_text = textCleansing(text)
 
-print(data['translation_details'], data['verses'], data['chapter_details'])
+print(new_text)
 
 
-for i in range(5):
-    print(i)
+
+
+
 
 
