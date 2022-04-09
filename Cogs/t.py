@@ -16,10 +16,10 @@ class Translations(commands.Cog):
         new_data = data['chapter_details']['chapter']
         url_1, url_2, icon_url = f"https://quran.com/{new_data['id']}", "https://quran.com/", "https://cdn.discordapp.com/avatars/958426940581232660/4e1e08d2e06568022f845afcf7cc7b9a?size=512"
         embed = discord.Embed(
-            title=f"{new_data['name_simple']}", url=url_1, color=0x2C2F33)
+            title=f" Surah {new_data['name_simple']}", url=url_1, color=0x2C2F33)
         num_verses = new_data['verses_count']
         embed.set_author(name=f"Holy Quran", url=url_2, icon_url=icon_url)
-                    
+        # print("here 1")
         embed.set_footer(text=f"Number of Ayahs In The Surah: {num_verses}")
         embed.timestamp = dt.datetime.now().astimezone()
         return embed
@@ -48,28 +48,31 @@ class Translations(commands.Cog):
     
     
     def errorEmbed(self, title, error):
-        return discord.Embed(title=title, description=error, color=discord.Color.blue())
+        return discord.Embed(title=title, description=error, color=0xFFBA01)
     
-    async def requestLan(self, ctx,language, chapter):
+
+    async def requestLan(self, ctx, language, chapter):
         # if chapter_details['status'] == 404:
         #     await ctx.message.reply(embed=self.errorEmbed("Call Error", "Sorry, there was an error with the call."))
-        #     return 
+        #     return
 
         languages = ut.readJSON(ut.directory['transJSON'])
-        lang_details = None
-        for i in languages:
-            logics = (i['lang_all_lower'] == language.lower(),
-                    i['iso_code'] == language.lower())
-            if any(logics):
-                lang_details = i
-                break
-        if lang_details == None:
+        lang_details = []
+        for i in language:
+            for j in languages:
+                logics = (j['lang_all_lower'] == i.lower(),
+                        j['iso_code'] == i.lower())
+                if any(logics):
+                    lang_details.append(j)
+                    break
+        if len(lang_details) == 0:
             return
+
         try:
             json_data = req.get(f"https://api.quran.com/api/v4/chapters/{chapter}")
             chapter_details = json.loads(json_data.text)
         except req.exceptions.RequestException as e:  # This is the correct syntax
-            await ctx.message.reply(embed=self.errorEmbed("Call Error", f"{e}"))
+            raise SystemExit(e)
 
         allVerses = {
             "verses": [],
@@ -77,12 +80,14 @@ class Translations(commands.Cog):
             "translation_details": lang_details
         }
         reach, index = False, 1
+        lang_join = allVerses['translation_details']
         while not reach:
             try:
-                json_data = req.get(f"https://api.quran.com/api/v4/verses/by_chapter/{chapter}?language=en&words=false&translations={lang_details['id']}&page={index}")
+                json_data = req.get(
+                    f"https://api.quran.com/api/v4/verses/by_chapter/{chapter}?language=en&words=false&translations={','.join(format(l['id']) for l in lang_join)}&page={index}")
                 verses = json.loads(json_data.text)
             except req.exceptions.RequestException as e:  # This is the correct syntax
-                await ctx.message.reply(embed=self.errorEmbed("Call Error", f"{e}"))
+                raise SystemExit(e)
 
             if len(verses['verses']) == 0:
                 reach = True
@@ -96,46 +101,69 @@ class Translations(commands.Cog):
         print(allVerses['translation_details'])
         return allVerses
 
-                        
+    def compareId(self,id, data):
+        for i in data['translation_details']:
+            if id == i['id']:
+                return True
+        return False
+    
+    
     @commands.command(pass_context=True)
     async def tQuran(self, ctx, *args):
         collect = []
-        
-        if len(args) >= 2:
-            if args[0][0].isnumeric() and args[1][0].isalpha():
+        arg_num = len(args)
+        nums = args[0].split(":") # splitting up chapter and ayahs
+        if arg_num >= 2 and arg_num < 10:      
+            for i in range(len(args)):
+                if args[i][0].isnumeric() and i == 0:
+                    continue
+                elif args[i][0].isalpha() and i > 0:
+                    collect.append(args[i])
+                else:
+                    await ctx.message.reply(embed=self.errorEmbed("Wrong Entering", "Please Enter the translation or numbers correctly."))
+            
+            if '-' in args[0] and arg_num == 2:
+                ayahs = nums[1].split("-")
+                start = int(ayahs[0])
+                end = int(ayahs[1])
+                if (end - start) > 15 or (end - start) < 0:
+                    await ctx.message.reply(embed=self.errorEmbed("Wrong Entering", "Please let the range of ayahs not more than 15."))
+                    return 
+                lang_data = await self.requestLan(ctx, collect, nums[0])
+
+                embed = self.setInitEmbed(lang_data)
+
+                for j in lang_data['verses']:
+
+                    if j['verse_number'] >= start and j['verse_number'] <= end:
+                        for l in j['translations']:
+                            if self.compareId(l['resource_id'], lang_data):
+                                text = self.textCleansing(l['text'])
+                            else:
+                                text = l['text']
+                            embed.add_field(
+                                name=f"{nums[0]}:{j['verse_number']}(Translation by: )", value=f"{text}", inline=False)
+                await ctx.send(embed=embed)
+                
+            elif args[0][0].isnumeric() and args[1][0].isalpha():
                 if ":" in args[0]:
-                    nums = args[0].split(":")
-                   
-                    for i in range(len(args)):
-                        if args[i][0].isnumeric() and i == 0:
-                            continue
-                        elif args[i][0].isalpha() and i > 0:
-                            collect.append(args[i])
-                        else:
-                            await ctx.message.reply(embed=self.errorEmbed("Wrong Entering", "Please Enter the translation or numbers correctly."))
-                   
-                    translation_data = []
-                    for i in collect:
-                        json_data = await self.requestLan(ctx,i, nums[0])
-                        translation_data.append(json_data)
+                     
+                    lang_data = await self.requestLan(ctx, collect, nums[0])
 
-                    embed = self.setInitEmbed(translation_data[0])
+                    embed = self.setInitEmbed(lang_data)
                     num = int(nums[1])
-                    # print(num)
-                    for i in translation_data:
-
-                        # ver_len = len(i['verses'])
-                        # print(i['verses'], ver_len)
-                        for j in i['verses']:
-                            if j['verse_number'] == num:
-                                # if 'en' in i['translation_details']['iso_code'] :
-                                text = self.textCleansing(j['translations'][0]['text'])
-                                # else:
-                                #     text = j['translations'][0]['text']
-                                    
+                    
+                    for j in lang_data['verses']:
+                        
+                        if j['verse_number'] == num:
+                            for l in j['translations']:
+                                if self.compareId(l['resource_id'], lang_data):
+                                    text = self.textCleansing(l['text'])
+                                else:
+                                    text = l['text']
                                 embed.add_field(name=f"{args[0]}", value=f"{text}", inline=False)
-                                break
-                    await ctx.message.reply(embed=embed)
+                            break
+                    await ctx.send(embed=embed)
                     
                 else:
                     await ctx.message.reply(embed=self.errorEmbed("Wrong Entering", "Please Enter The Surah and Ayah correctly."))
@@ -143,7 +171,7 @@ class Translations(commands.Cog):
             else:
                 await ctx.message.reply(embed=self.errorEmbed("Wrong Entering", "Please Enter the translation or numbers correctly."))
         else:
-            pass
+            await ctx.message.reply(embed=self.errorEmbed("Wrong Entering", "Please Enter the translation or numbers correctly."))
         
 
 

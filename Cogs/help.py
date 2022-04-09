@@ -16,6 +16,16 @@ class Help(commands.Cog):
     async def help(self, ctx, *args):
         pass
 
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        check_mark = '✅'
+        prefix = ut.get_prefix(message)
+        string_1, string_2 = f"{prefix}tQuran", f"{prefix}Quran"
+        msg = message.content
+        if msg.startswith(string_1) or msg.startswith(string_2):
+            await message.add_reaction(check_mark)
+
+
 
 def setup(bot):
     bot.add_cog(Help(bot))

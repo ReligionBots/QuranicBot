@@ -17,7 +17,6 @@ bot = commands.Bot(command_prefix=ut.getPrefix, activity = discord.Game(name="~h
 bot.remove_command("help") # for removing the main help command
 
 
-
 # main function for loading other extensions
 def main():     
     # Assigning main extensions

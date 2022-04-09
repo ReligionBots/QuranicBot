@@ -3,6 +3,7 @@ import discord
 import asyncio
 import http.client
 import datetime
+from Utils import utils as ut
 # import requests as req
 
 from discord.ext import tasks, commands
@@ -46,13 +47,15 @@ class Quran(commands.Cog):
         name = new_data['edition']['name']
         embed.set_author(name=f"{name}", url=url_2,icon_url=icon_url)
                     
-        embed.set_footer(text=f"Number of Ayahs In The Surah: {len(new_data['ayahs'])}")
+        embed.set_footer(
+            text=f"Number of Ayahs In The Surah: {len(new_data['ayahs'])}")
         embed.timestamp = datetime.datetime.now().astimezone()
         return embed
     
     def errorEmbed(self, title, error):
-        return discord.Embed(title=title, description=error, color=discord.Color.blue())
+        return discord.Embed(title=title, description=error, color=0xFFBA01)
     
+
     @commands.command(pass_context=True)
     async def Quran(self, ctx, *args):
         if '-' in args[0]:
@@ -78,7 +81,7 @@ class Quran(commands.Cog):
                     embed = self.setInitEmbed(req_data)
                 
                     embed.add_field(name=f"{self.arabicNumber(args[0])}", value=f"{text}", inline=False)
-                    await ctx.message.reply(embed=embed)
+                    await ctx.send(embed=embed)
                     
             elif all(logics):
                 string = args[0].split(":")
@@ -103,7 +106,7 @@ class Quran(commands.Cog):
                     if end > ayah_len:
                         embed = self.setInitEmbed(req_data)
                         
-                        for i in range(start, ayah_len + 1):
+                        for i in range(start, ayah_len):
                             text = ayahs[i]['text']
                             part = self.arabicNumber(str(surah) + ":" + str(i))
                             embed.add_field(name=f"{part}", value=f"{text}", inline=False)
