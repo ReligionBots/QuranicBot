@@ -170,7 +170,7 @@ class Translations(commands.Cog):
                                     if l['resource_id'] == i['id']: 
                                         trans_name = i['name']
                                 embed.add_field(
-                                    name=f"{args[0]}", value=f"{text}\n__*( Translation By: {trans_name} )*__", inline=False)
+                                    name=f"{args[0]}", value=f"{text}\n\n __*  Translation By: {trans_name}  *__", inline=False)
                                 index += 1
                             break
                     await ctx.send(embed=embed)
