@@ -1,0 +1,4 @@
+python-discord
+python-string_utils 
+requests 
+python-dotenv

@@ -105,8 +105,12 @@ def updateJSON(directory, newData):
 
 
 def get_prefix_1(client, message):
+    preifxes = ""
     url = "http://tx-01.botgate.xyz:1059/pre/get/"
-    prefixes = req.get(url=url, timeout=10)
+    try:
+        prefixes = req.get(url=url, timeout=10)
+    except Exception as error:
+        print(error)
     prefixes_json = json.loads(prefixes.text)
 
     for i in prefixes_json:
@@ -117,8 +121,12 @@ def get_prefix_1(client, message):
 
 
 def get_prefix_2(message):
+    preifxes = ""
     url = "http://tx-01.botgate.xyz:1059/pre/get/"
-    prefixes = req.get(url=url, timeout=10)
+    try:
+        prefixes = req.get(url=url, timeout=10)
+    except Exception as error:
+        print(error)
     prefixes_json = json.loads(prefixes.text)
 
     for i in prefixes_json:
