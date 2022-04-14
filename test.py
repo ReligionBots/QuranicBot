@@ -1,69 +1,73 @@
 # import http.client
 import requests as req
+import os
 import json
+import discord
 from Utils import utils as ut
+from discord.ext import tasks, commands
+from dotenv import load_dotenv
+import http.client as ht
 
 
-# text = "And ˹remember˺ when We said to the angels, “Prostrate before Adam,”<sup foot_note=76385>1</sup> so they all did—but not Iblîs,<sup foot_note=76386>2</sup> who refused and acted arrogantly,<sup foot_note=76387>3</sup> becoming unfaithful."
+# @bot.command()
+# async def playyt(ctx, url):
+#     song_there = os.path.isfile("song.mp3")
+#     try:
+#         if song_there:
+#             os.remove("song.mp3")
+#     except PermissionError:
+#         em8 = discord.Embed(title="Music Is Currently Playing",
+#                             description='Please wait for the current playing music to end or use %leave <:_Paimon6:827074349450133524>.\nMusic provided by {ctx.author.mention} <:_Paimon6:827074349450133524>', color=ctx.author.color)
+#         await ctx.send(embed=em8)
+#         return
 
-def requestLan(language, chapter):
-     # if chapter_details['status'] == 404:
-     #     await ctx.message.reply(embed=self.errorEmbed("Call Error", "Sorry, there was an error with the call."))
-      #     return
+#     voiceChannel = discord.utils.get(ctx.guild.voice_channels)
+#     await voiceChannel.connect()
+#     voice = discord.utils.get(bot.voice_clients, guild=ctx.guild)
+#     em6 = discord.Embed(title="Downloading Youtube Music",
+#                         description=f'{url}\n\nPlease wait for paimon to setup the music you provide.\nMusic provided by {ctx.author.mention} <:_Paimon6:827074349450133524>', color=ctx.author.color)
+#     await ctx.send(embed=em6, delete_after=2)
+#     await ctx.message.delete()
 
-    languages = ut.readJSON(ut.directory['transJSON'])
-    lang_details = []
-    for i in language:
-        for j in languages:
-            logics = (j['lang_all_lower'] == i.lower(), j['iso_code'] == i.lower())
-            if any(logics):
-                lang_details.append(j)
-                break
-    if len(lang_details) == 0:
-        return
-    
-    try:
-        json_data = req.get(f"https://api.quran.com/api/v4/chapters/{chapter}")
-        chapter_details = json.loads(json_data.text)
-    except req.exceptions.RequestException as e:  # This is the correct syntax
-        raise SystemExit(e)
+#     ydl_opts = {
+#         'format': 'bestaudio/best',
+#         'postprocessors': [{
+#             'key': 'FFmpegExtractAudio',
+#             'preferredcodec': 'mp3',
+#             'preferredquality': '196',
+#         }],
+#     }
+#     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+#         ydl.download([url])
+#     for file in os.listdir("./"):
+#         if file.endswith(".mp3"):
+#             os.rename(file, "song.mp3")
+#     voice.play(discord.FFmpegPCMAudio("song.mp3"))
+#     em1 = discord.Embed(title="Now Listening Youtube Music",
+#                         description=f'{url}\n\nPlease use %leave first to change music.\nMusic provided by {ctx.author.mention} <:_Paimon6:827074349450133524>', color=ctx.author.color)
 
-    allVerses = {
-        "verses": [],
-        "chapter_details": chapter_details,
-        "translation_details": lang_details
-    }
-    reach, index = False, 1
-    lang_join = allVerses['translation_details']
-    while not reach:
-        try:
-            json_data = req.get(
-                f"https://api.quran.com/api/v4/verses/by_chapter/{chapter}?language=en&words=false&translations={','.join(format(l['id']) for l in lang_join)}&page={index}")
-            verses = json.loads(json_data.text)
-        except req.exceptions.RequestException as e:  # This is the correct syntax
-            raise SystemExit(e)
+#     videoID = url.split("watch?v=")[1].split("&")[0]
 
-        if len(verses['verses']) == 0:
-            reach = True
-            break
-        else:
-            pageVerse = verses['verses']
-
-            for i in pageVerse:
-                allVerses['verses'].append(i)
-            index += 1
-    print(allVerses['translation_details'])
-    return allVerses
-
-
-lang = ["ku", "en", "tr"]
-
-data = requestLan(lang, 3)
+#     em1.set_thumbnail(
+#         url=f'https://img.youtube.com/vi/{videoID}/default.jpg'.format(videoID=videoID))
+#     await ctx.send(embed=em1)
 
 
 
 
-print(f"{data}")
 
 
+
+conn = ht.HTTPConnection("tx-01.botgate.xyz", 1059)
+
+
+def request():
+    conn.request("GET", f"/pre/get")
+    res = conn.getresponse()
+    data = res.read()
+    return json.loads(data.decode("utf-8"))
+
+
+
+print(request())
 

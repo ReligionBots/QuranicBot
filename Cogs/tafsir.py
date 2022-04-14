@@ -2,7 +2,7 @@ import os
 import json
 import discord
 import requests as req
-import http.client
+# import http.client
 from discord.ext import tasks, commands
 from Utils import utils as ut
 # from dotenv import load_dotenv

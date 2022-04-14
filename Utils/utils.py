@@ -2,12 +2,13 @@ import json
 import string_utils
 import requests as req
 from discord.ext import commands
-
+#import http.client as ht
 
 directory = {
     "extJSON": "QuranicBot/Data/JSON/extensions.json",
     "transJSON": "QuranicBot/Data/JSON/translations.json"
 }
+
 
 # directory = {
 #     "prefixJSON": "./Data/JSON/prefixes.json",
@@ -77,7 +78,7 @@ def readTextLines(directory):
 def readText(directory):
     with open(directory, "r") as pre:
         text = pre
-        textLines = text.read();
+        textLines = text.read()
         return textLines
 
 
@@ -94,23 +95,40 @@ def updateJSON(directory, newData):
 
 # a function for getting server prefix
 
-def get_prefix(message):
-    getReq = req.get("http://localhost:3003/pre/get")
-    prefixes = json.loads(getReq.text)
-    for i in prefixes:
+
+# def request():
+#     conn = ht.HTTPConnection("tx-01.botgate.xyz", 1059, timeout=10)
+#     conn.request("GET", f"/pre/get/")
+#     res = conn.getresponse()
+#     data = res.read()
+#     return json.loads(data.decode("utf-8"))
+
+
+def get_prefix_1(client, message):
+    url = "http://tx-01.botgate.xyz:1059/pre/get/"
+    prefixes = req.get(url=url, timeout=10)
+    prefixes_json = json.loads(prefixes.text)
+
+    for i in prefixes_json:
         if i['guild'] == str(message.guild.id):
             return i['prefix']
 
-    return prefixes[0]['prefix']
+    return prefixes_json[0]['prefix']
 
-def getPrefix(client, message):
-    getReq = req.get("http://localhost:3003/pre/get")
-    prefixes = json.loads(getReq.text)
-    for i in prefixes:
+
+def get_prefix_2(message):
+    url = "http://tx-01.botgate.xyz:1059/pre/get/"
+    prefixes = req.get(url=url, timeout=10)
+    prefixes_json = json.loads(prefixes.text)
+
+    for i in prefixes_json:
         if i['guild'] == str(message.guild.id):
             return i['prefix']
 
-    return prefixes[0]['prefix']
+    return prefixes_json[0]['prefix']
+
+
+
 
 # a function for creating server prefixes
 

@@ -13,7 +13,7 @@ ext_data = ut.readJSON(ut.directory['extJSON'])
 
     
 # we make the bot and put the prefix
-bot = commands.Bot(command_prefix=ut.getPrefix, activity = discord.Game(name="~help"))
+bot = commands.Bot(command_prefix=ut.get_prefix_1)
 bot.remove_command("help") # for removing the main help command
 
 
@@ -25,11 +25,14 @@ def main():
     for extension in extensions:
         ext = extension['extension']
         try:
-            for folder in os.listdir("QuranicBot"):
-                if os.path.exists(os.path.join("QuranicBot",folder, ext+".py")):
-                    bot.load_extension(f"QuranicBot.{folder}.{ext}")
-                else:
-                    bot.load_extension(f"Cogs.{ext}")
+            if os.path.exists("./QuranicBot"):
+                for folder in os.listdir("QuranicBot"):
+                    if os.path.exists(os.path.join("QuranicBot",folder, ext+".py")):
+                        bot.load_extension(f"QuranicBot.{folder}.{ext}")
+                    else:
+                        bot.load_extension(f"Cogs.{ext}")
+            else:
+                bot.load_extension(f"Cogs.{ext}")
         except Exception as errors:
             print(f'{errors}')
     
@@ -39,5 +42,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 

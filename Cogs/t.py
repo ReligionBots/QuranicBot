@@ -12,13 +12,18 @@ class Translations(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         
-    def setInitEmbed(self,data):
+    def setInitEmbed(self,data, bit):
         new_data = data['chapter_details']['chapter']
         url_1, url_2, icon_url = f"https://quran.com/{new_data['id']}", "https://quran.com/", "https://cdn.discordapp.com/avatars/958426940581232660/4e1e08d2e06568022f845afcf7cc7b9a?size=512"
         embed = discord.Embed(
             title=f" Surah {new_data['name_simple']}", url=url_1, color=0x2C2F33)
         num_verses = new_data['verses_count']
-        embed.set_author(name=f"Holy Quran", url=url_2, icon_url=icon_url)
+        if bit:
+            embed.set_author(name=f"Holy Quran  (Translation by: {data['translation_details'][0]['name']})",
+                         url=url_2, icon_url=icon_url)
+        else:
+            embed.set_author(name=f"Holy Quran",
+                             url=url_2, icon_url=icon_url)
         # print("here 1")
         embed.set_footer(text=f"Number of Ayahs In The Surah: {num_verses}")
         embed.timestamp = dt.datetime.now().astimezone()
@@ -131,7 +136,7 @@ class Translations(commands.Cog):
                     return 
                 lang_data = await self.requestLan(ctx, collect, nums[0])
 
-                embed = self.setInitEmbed(lang_data)
+                embed = self.setInitEmbed(lang_data, 1)
 
                 for j in lang_data['verses']:
 
@@ -142,7 +147,7 @@ class Translations(commands.Cog):
                             else:
                                 text = l['text']
                             embed.add_field(
-                                name=f"{nums[0]}:{j['verse_number']}(Translation by: )", value=f"{text}", inline=False)
+                                name=f"{nums[0]}:{j['verse_number']}", value=f"{text}", inline=False)
                 await ctx.send(embed=embed)
                 
             elif args[0][0].isnumeric() and args[1][0].isalpha():
@@ -150,18 +155,23 @@ class Translations(commands.Cog):
                      
                     lang_data = await self.requestLan(ctx, collect, nums[0])
 
-                    embed = self.setInitEmbed(lang_data)
+                    embed = self.setInitEmbed(lang_data, 0)
                     num = int(nums[1])
-                    
                     for j in lang_data['verses']:
                         
                         if j['verse_number'] == num:
+                            index = 0
                             for l in j['translations']:
                                 if self.compareId(l['resource_id'], lang_data):
                                     text = self.textCleansing(l['text'])
                                 else:
                                     text = l['text']
-                                embed.add_field(name=f"{args[0]}", value=f"{text}", inline=False)
+                                for i in lang_data['translation_details']:
+                                    if l['resource_id'] == i['id']: 
+                                        trans_name = i['name']
+                                embed.add_field(
+                                    name=f"{args[0]} (Translation By: {trans_name})", value=f"{text}", inline=False)
+                                index += 1
                             break
                     await ctx.send(embed=embed)
                     
