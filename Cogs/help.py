@@ -21,7 +21,7 @@ class Help(commands.Cog):
     async def on_message(self, message):
         check_mark, prefix = '✅', None
         try:
-            prefix = ut.prefix_2(message)
+            prefix = ut.get_prefix_2(message)
             string_1, string_2, string_3 = f"{prefix}tQuran", f"{prefix}Quran", f"{prefix}help"
             msg = message.content
             logics = (
