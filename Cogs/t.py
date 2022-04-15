@@ -12,11 +12,11 @@ class Translations(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         
-    def setInitEmbed(self,data, bit):
+    def setInitEmbed(self,ctx,data, bit):
         new_data = data['chapter_details']['chapter']
         url_1, url_2, icon_url = f"https://quran.com/{new_data['id']}", "https://quran.com/", "https://cdn.discordapp.com/avatars/958426940581232660/4e1e08d2e06568022f845afcf7cc7b9a?size=512"
         embed = discord.Embed(
-            title=f" Surah {new_data['name_simple']}", url=url_1, color=0x2C2F33)
+            title=f" Surah {new_data['name_simple']}", url=url_1, color=ctx.author.color)
         num_verses = new_data['verses_count']
         if bit:
             embed.set_author(name=f"Holy Quran  (Translation by: {data['translation_details'][0]['name']})",
@@ -136,7 +136,7 @@ class Translations(commands.Cog):
                     return 
                 lang_data = await self.requestLan(ctx, collect, nums[0])
 
-                embed = self.setInitEmbed(lang_data, 1)
+                embed = self.setInitEmbed(ctx,lang_data, 1)
 
                 for j in lang_data['verses']:
 
@@ -155,7 +155,7 @@ class Translations(commands.Cog):
                      
                     lang_data = await self.requestLan(ctx, collect, nums[0])
 
-                    embed = self.setInitEmbed(lang_data, 0)
+                    embed = self.setInitEmbed(ctx,lang_data, 0)
                     num = int(nums[1])
                     for j in lang_data['verses']:
                         
