@@ -4,15 +4,15 @@ import requests as req
 from discord.ext import commands
 #import http.client as ht
 
-directory = {
-    "extJSON": "./Data/JSON/extensions.json",
-    "transJSON": "./Data/JSON/translations.json"
-}
-
 # directory = {
-#     "extJSON": "QuranicBot/Data/JSON/extensions.json",
-#     "transJSON": "QuranicBot/Data/JSON/translations.json"
+#     "extJSON": "./Data/JSON/extensions.json",
+#     "transJSON": "./Data/JSON/translations.json"
 # }
+
+directory = {
+    "extJSON": "QuranicBot/Data/JSON/extensions.json",
+    "transJSON": "QuranicBot/Data/JSON/translations.json"
+}
 
 
 

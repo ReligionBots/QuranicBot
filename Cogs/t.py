@@ -31,7 +31,8 @@ class Translations(commands.Cog):
     
 
     def textCleansing(self, text):
-        count, index, start, end, new_str_1= 0, 0, None, None, ""
+        count, index, start, end,new_text, new_str_1= 0, 0, None, None,"", ""
+        text += " "
         new_text = text
         for i in range(len(text)):
             if count > 0:
@@ -40,14 +41,15 @@ class Translations(commands.Cog):
                     end = i
                 elif index == 2:
                     new_str_1 = text[start:end+1]
+                    print(new_str_1)
                     # print(new_str_1)
-                    new_text = new_text.replace(new_str_1.strip(), " ")
+                    new_text = new_text.replace(new_str_1, " ")
                     count, index = 0, 0
                     pass
             elif text[i] == "<":
                 start = i
                 count += 1
-
+        print(new_text)
         return new_text
 
     
@@ -142,10 +144,7 @@ class Translations(commands.Cog):
 
                     if j['verse_number'] >= start and j['verse_number'] <= end:
                         for l in j['translations']:
-                            if self.compareId(l['resource_id'], lang_data):
-                                text = self.textCleansing(l['text'])
-                            else:
-                                text = l['text']
+                            text = self.textCleansing(l['text'])
                             embed.add_field(
                                 name=f"{nums[0]}:{j['verse_number']}", value=f"{text}", inline=False)
                 await ctx.send(embed=embed)
@@ -164,7 +163,7 @@ class Translations(commands.Cog):
                             for l in j['translations']:
                                 text = self.textCleansing(l['text'])
                                 for i in lang_data['translation_details']:
-                                    if l['resource_id'] == i['id']: 
+                                    if l['resource_id'] == i['id']:
                                         trans_name = i['name']
                                 embed.add_field(
                                     name=f"{args[0]}", value=f"{text}\n\n __*Translation By: {trans_name}*__", inline=False)
