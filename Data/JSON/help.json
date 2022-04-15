@@ -1,0 +1,12 @@
+{
+    "help":[
+        {
+            "title":"Quran",
+            "text":"Use this command if you want to get Quran in arabic, like this:\n <prefix>Quran 3:4 -> this will bring back Surah 3 Ayah 4"
+        },
+        {
+            "title": "",
+            "text": ""
+        }
+    ]
+}

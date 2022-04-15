@@ -4,14 +4,18 @@ import requests as req
 from discord.ext import commands
 #import http.client as ht
 
+# directory = {
+#     "extJSON": "./Data/JSON/extensions.json",
+#     "transJSON": "./Data/JSON/translations.json"
+# }
+
 directory = {
-    "extJSON": "./Data/JSON/extensions.json",
-    "transJSON": "./Data/JSON/translations.json"
+    "extJSON": "QuranicBot/Data/JSON/extensions.json",
+    "transJSON": "QuranicBot/Data/JSON/translations.json"
 }
 
 
-# directory = {
-#     "prefixJSON": "./Data/JSON/prefixes.json",
+
 #     "extJSON": "./Data/JSON/extensions.json",
 #     "rapsJSON": "./Data/JSON/raps.json"
 #     "rapsText": "./Data/Text/rap.txt"
@@ -142,16 +146,19 @@ def get_prefix_2(message):
 
 
 def prefixCreation(ctx, prefix):
-    data = readJSON(directory['prefix'])
-    prefixes = data['prefixes']
+    url = "http://tx-01.botgate.xyz:1059/pre/get/"
+    data = req.get(url=url, timeout=10)
+    data = json.loads(data.text)
+    prefixes = data
     if not " " in prefix:
         index = 0
         for i in prefixes:
             if str(ctx.guild.id) == i['guild']:
                 if prefix != i['prefix']:
-                    data['prefixes'][index]['prefix'] = prefix
-
-                    updateJSON(directory['prefix'], data)
+                    string_1 = {'prefix': prefix}
+                    url = f"http://tx-01.botgate.xyz:1059/pre/update/{ctx.guild.id}/{json.dumps(string_1)}/"
+                    req.patch(url=url, timeout=10)
+                    
                     status = {
                         "status": 1,
                         "data": commands.Bot(command_prefix=prefix)
@@ -159,27 +166,30 @@ def prefixCreation(ctx, prefix):
                     return status
                 elif prefix == i['prefix']:
                     status = {
-                        "status": 1,
+                        "status": 2,
                         "data": commands.Bot(command_prefix=i['prefix'])
                     }
                     return status
                 else:
                     continue
             index = index + 1
-
-        gid = str(ctx.guild.id)
-        guildData = {
-            "id": len(prefixes),
-            "guild": gid,
-            "prefix": prefix
-        }
-        data['prefixes'].append(guildData)
-        updateJSON(directory['prefix'], data)
-        print("here")
-        status = {
-            "status": 1,
-            "data": commands.Bot(command_prefix=prefix)
-        }
+        try:
+            gid = str(ctx.guild.id)
+            guild_data = {'guild': gid,'prefix':prefix}
+            url = f"http://tx-01.botgate.xyz:1059/pre/post/{json.dumps(guild_data)}"
+            req.post(url=url, timeout=10)
+            print("here")
+            status = {
+                "status": 1,
+                "data": commands.Bot(command_prefix=prefix)
+            }
+        except Exception as error:
+            status = {
+                "status": 0,
+                "error": error,
+                "data": f"Sorry, there was an error, try again"
+            }
+            print(error)
         return status
     else:
         status = {

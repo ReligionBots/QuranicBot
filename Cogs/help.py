@@ -11,10 +11,12 @@ from Utils import utils as ut
 class Help(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-
+    def handleEmbed(self, title, error):
+        return discord.Embed(title=title, description=error, color=0xFFBA01)
+    
     @commands.command(pass_context=True)
     async def help(self, ctx, *args):
-
+        
         pass
 
     @commands.Cog.listener()
