@@ -32,7 +32,7 @@ class Translations(commands.Cog):
 
     def textCleansing(self, text):
         count, index, start, end,new_text, new_str_1= 0, 0, None, None,"", ""
-        text += " "
+        text += " "  # this for index correction
         new_text = text
         for i in range(len(text)):
             if count > 0:
