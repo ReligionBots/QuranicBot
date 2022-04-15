@@ -39,11 +39,11 @@ class Quran(commands.Cog):
         data = res.read()
         return json.loads(data.decode("utf-8"))
     
-    def setInitEmbed(self,data):
+    def setInitEmbed(self,ctx, data):
         new_data = data['data']
         url_1, url_2, icon_url = f"https://quran.com/{new_data['number']}", "https://quran.com/", "https://cdn.discordapp.com/avatars/958426940581232660/4e1e08d2e06568022f845afcf7cc7b9a?size=512"
         embed = discord.Embed(
-            title=f"{new_data['name']}", url=url_1, color=0x2C2F33)
+            title=f"{new_data['name']}", url=url_1, color=ctx.author.color)
         name = new_data['edition']['name']
         embed.set_author(name=f"{name}", url=url_2,icon_url=icon_url)
                     
@@ -78,7 +78,7 @@ class Quran(commands.Cog):
                     text = ayah['text']
                     # print(len(text))
                     
-                    embed = self.setInitEmbed(req_data)
+                    embed = self.setInitEmbed(ctx,req_data)
                 
                     embed.add_field(name=f"{self.arabicNumber(args[0])}", value=f"{text}", inline=False)
                     await ctx.send(embed=embed)
@@ -104,23 +104,19 @@ class Quran(commands.Cog):
                     return
                 else:
                     if end > ayah_len:
-                        embed = self.setInitEmbed(req_data)
-                        
-                        for i in range(start, ayah_len):
-                            text = ayahs[i]['text']
-                            part = self.arabicNumber(str(surah) + ":" + str(i))
-                            embed.add_field(name=f"{part}", value=f"{text}", inline=False)
-                        await ctx.send(embed=embed)
-                    else:
-                        data_len = 0
-                        embed = self.setInitEmbed(req_data)
-                        for i in range(start, end + 1):
-                            text = ayahs[i]['text']
-                            data_len = data_len + len(text)
-                            part = self.arabicNumber(str(surah) + ":" + str(i))
-                            embed.add_field(name=f"{part}", value=f"{text}", inline=False)
-                        print(data_len)
-                        await ctx.send(embed=embed)
+                        end = ayah_len  
+                    data_len = 0
+                    
+                    embed = self.setInitEmbed(ctx,req_data)
+                    for i in range(start, end):
+                        text = ayahs[i]['text']
+                        data_len = data_len + len(text)
+                        part = self.arabicNumber(str(surah) + ":" + str(i))
+                        embed.add_field(
+                            name=f"{part}", value=f"{text}", inline=False)
+        
+                    print(data_len)
+                    await ctx.send(embed=embed)
             else:
                 await ctx.send(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Ayah Number Chosen For The surah"))
                 return
