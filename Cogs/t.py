@@ -162,10 +162,7 @@ class Translations(commands.Cog):
                         if j['verse_number'] == num:
                             index = 0
                             for l in j['translations']:
-                                if self.compareId(l['resource_id'], lang_data):
-                                    text = self.textCleansing(l['text'])
-                                else:
-                                    text = l['text']
+                                text = self.textCleansing(l['text'])
                                 for i in lang_data['translation_details']:
                                     if l['resource_id'] == i['id']: 
                                         trans_name = i['name']

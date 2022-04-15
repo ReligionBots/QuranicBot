@@ -1,12 +1,42 @@
 {
-    "help":[
-        {
+    "helpIntro":[
+        {   "id":0,
             "title":"Quran",
-            "text":"Use this command if you want to get Quran in arabic, like this:\n <prefix>Quran 3:4 -> this will bring back Surah 3 Ayah 4"
+            "text":"Use this command to see all the commands that can be used for Quran in arabic"
+        },
+        {   
+            "id": 1,
+            "title": "tQuran",
+            "text": "Use this command to see all the commands that can be used for Quran in many languages"
         },
         {
-            "title": "",
-            "text": ""
+            "id": 1,
+            "title": "help",
+            "text": "The current embed will show up, using this command"
         }
-    ]
+    ],
+    "helpFull":{
+        "Quran":[
+            {  
+                "id": 0,
+                "title": "",
+                "text": ""
+            }
+        ],
+        "tQuran": [
+            {
+                "id": 0,
+                "title": "",
+                "text": ""
+            }
+        ],
+        "help": [
+            {
+                "id": 0,
+                "title": "",
+                "text": ""
+            }
+        ]
+        
+    }
 }

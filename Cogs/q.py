@@ -68,11 +68,11 @@ class Quran(commands.Cog):
                 if ":" in args[0]:
                     nums = args[0].split(":")
                     if int(nums[0]) > 114 or int(nums[0]) < 1:
-                        await ctx.message.reply(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Number Chosen For The Surah"))
+                        await ctx.send(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Number Chosen For The Surah"))
                         return
                     req_data = self.request(nums[0])
                     if len(req_data['data']['ayahs']) < int(nums[1]) - 1:
-                        await ctx.message.reply(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Ayah Number Chosen For The Surah"))
+                        await ctx.send(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Ayah Number Chosen For The Surah"))
                         return
                     ayah = req_data['data']['ayahs'][int(nums[1]) - 1]
                     text = ayah['text']
@@ -89,7 +89,7 @@ class Quran(commands.Cog):
                 surah = string[0]   # this is the surah
                 start, end = int(ranges[0]),int(ranges[1])
                 if int(surah) > 114 or int(surah) < 1:
-                    await ctx.message.reply(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Number Chosen For The surah"))
+                    await ctx.send(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Number Chosen For The surah"))
                     return
                 
                 req_data = self.request(str(surah))
@@ -97,10 +97,10 @@ class Quran(commands.Cog):
                 ayah_len = len(ayahs)
                
                 if ayah_len < start or start > ayah_len:
-                    await ctx.message.reply(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Ayah Number Chosen For The surah"))
+                    await ctx.send(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Ayah Number Chosen For The surah"))
                     return 
                 if (end - start) > 15:
-                    await ctx.message.reply(embed=self.errorEmbed(f"Wrong Entering", f"The Range is limited to 15 because of character size restriction"))
+                    await ctx.send(embed=self.errorEmbed(f"Wrong Entering", f"The Range is limited to 15 because of character size restriction"))
                     return
                 else:
                     if end > ayah_len:
@@ -110,7 +110,7 @@ class Quran(commands.Cog):
                             text = ayahs[i]['text']
                             part = self.arabicNumber(str(surah) + ":" + str(i))
                             embed.add_field(name=f"{part}", value=f"{text}", inline=False)
-                        await ctx.message.reply(embed=embed)
+                        await ctx.send(embed=embed)
                     else:
                         data_len = 0
                         embed = self.setInitEmbed(req_data)
@@ -120,13 +120,13 @@ class Quran(commands.Cog):
                             part = self.arabicNumber(str(surah) + ":" + str(i))
                             embed.add_field(name=f"{part}", value=f"{text}", inline=False)
                         print(data_len)
-                        await ctx.message.reply(embed=embed)
+                        await ctx.send(embed=embed)
             else:
-                await ctx.message.reply(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Ayah Number Chosen For The surah"))
+                await ctx.send(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Ayah Number Chosen For The surah"))
                 return
                     
         else:
-            await ctx.message.reply(embed=self.errorEmbed("Wrong Entering", "Fields Left Empty."))
+            await ctx.send(embed=self.errorEmbed("Wrong Entering", "Fields Left Empty."))
      
 
 
