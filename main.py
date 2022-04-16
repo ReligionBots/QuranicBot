@@ -9,7 +9,7 @@ load_dotenv()
 TOKEN = os.getenv('TOKEN')
 
 # here we are opeing the extensions file to get the extension details
-ext_data = ut.readJSON(ut.directory['extJSON'])
+ext_data = ut.readJSON(ut.directory_1['extJSON'] or ut.directory_2['extJSON'])
 
     
 # we make the bot and put the prefix

@@ -11,6 +11,7 @@ import datetime as dt
 class Translations(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.languages = ut.readJSON(ut.directory['transJSON'])
         
     def setInitEmbed(self,ctx,data, bit):
         new_data = data['chapter_details']['chapter']
@@ -63,7 +64,7 @@ class Translations(commands.Cog):
         #     await ctx.message.reply(embed=self.errorEmbed("Call Error", "Sorry, there was an error with the call."))
         #     return
 
-        languages = ut.readJSON(ut.directory['transJSON'])
+        languages = self.languages
         lang_details = []
         for i in language:
             for j in languages:
