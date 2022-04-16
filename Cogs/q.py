@@ -70,7 +70,8 @@ class Quran(commands.Cog):
                     if int(nums[0]) > 114 or int(nums[0]) < 1:
                         await ctx.send(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Number Chosen For The Surah"))
                         return
-                    req_data = self.request(nums[0])
+                    for i in range(2):
+                        req_data = self.request(nums[0])
                     if len(req_data['data']['ayahs']) < int(nums[1]) - 1:
                         await ctx.send(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Ayah Number Chosen For The Surah"))
                         return
@@ -92,7 +93,8 @@ class Quran(commands.Cog):
                     await ctx.send(embed=self.errorEmbed(f"Wrong Entering", f"Wrong Number Chosen For The surah"))
                     return
                 
-                req_data = self.request(str(surah))
+                for i in range(2):
+                    req_data = self.request(nums[0])
                 ayahs = req_data['data']['ayahs']
                 ayah_len = len(ayahs)
                
