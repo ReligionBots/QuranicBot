@@ -5,19 +5,38 @@ import requests as req
 # import http.client
 from discord.ext import tasks, commands
 from Utils import utils as ut
+import datetime
 # from dotenv import load_dotenv
 
 
 class Help(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-    def handleEmbed(self, title, error):
-        return discord.Embed(title=title, description=error, color=0xFFBA01)
+        self.data = ut.readJSON('QuranicBot/Data/JSON/translations.json') or ut.readJSON('./Data/JSON/translations.json')
     
+    def setInitEmbed(self,ctx):
+        icon_url = "https://cdn.discordapp.com/avatars/958426940581232660/4e1e08d2e06568022f845afcf7cc7b9a?size=512"
+        embed = discord.Embed(title="HELP",color=ctx.author.color)
+
+        embed.set_author(name=f"القرآن الكريم", icon_url=icon_url)
+                    
+        embed.timestamp = datetime.datetime.now().astimezone()
+        return embed
+
+    def handleEmbed(self, title, desc):
+        return discord.Embed(title=title, description=desc, color=0xFFBA01)
+
     @commands.command(pass_context=True)
     async def help(self, ctx, *args):
-        
-        pass
+        if not args:
+            embed = self.setInitEmbed(ctx)
+            for i in self.data['helpIntro']:
+                embed.add_field(name=i['title'], value=i['text'], inline=False)
+            await ctx.send(embed=embed)
+            
+        # else:
+            
+        # pass
 
     @commands.Cog.listener()
     async def on_message(self, message):

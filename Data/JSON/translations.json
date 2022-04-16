@@ -9,42 +9,6 @@
         "iso_code": "en"
     },
     {
-        "id": 149,
-        "name": "Fadel Soliman, Bridges\u2019 translation",
-        "author_name": "Fadel Soliman",
-        "slug": "bridges-translation",
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
-        "id": 167,
-        "name": "Maarif-ul-Quran",
-        "author_name": "Mufti Muhammad Shafi",
-        "slug": "en-maarif-ul-quran",
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
-        "id": 20,
-        "name": "Saheeh International",
-        "author_name": "Saheeh International",
-        "slug": "en-sahih-international",
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
-        "id": 203,
-        "name": "Muhammad Taqi-ud-Din al-Hilali & Muhammad Muhsin Khan",
-        "author_name": "Muhammad Taqi-ud-Din al-Hilali & Muhammad Muhsin Khan",
-        "slug": null,
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
         "id": 234,
         "name": "Fatah Muhammad Jalandhari",
         "author_name": "Fatah Muhammad Jalandhari",
@@ -81,15 +45,6 @@
         "iso_code": "ug"
     },
     {
-        "id": 79,
-        "name": "Abu Adel",
-        "author_name": "Abu Adel",
-        "slug": "ru-abu-adel",
-        "lang_first_upper": "Russian",
-        "lang_all_lower": "russian",
-        "iso_code": "ru"
-    },
-    {
         "id": 80,
         "name": "Muhammad Karakunnu and Vanidas Elayavoor",
         "author_name": "Muhammad Karakunnu and Vanidas Elayavoor",
@@ -117,15 +72,6 @@
         "iso_code": "es"
     },
     {
-        "id": 84,
-        "name": "Mufti Taqi Usmani",
-        "author_name": "Mufti Taqi Usmani",
-        "slug": "en-taqi-usmani",
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
         "id": 75,
         "name": "Alikhan Musayev",
         "author_name": "Alikhan Musayev",
@@ -133,132 +79,6 @@
         "lang_first_upper": "Azeri",
         "lang_all_lower": "azeri",
         "iso_code": "az"
-    },
-    {
-        "id": 85,
-        "name": "Abdul Haleem",
-        "author_name": "Abdul Haleem",
-        "slug": "en-haleem",
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
-        "id": 171,
-        "name": "Abridged Explanation of the Quran",
-        "author_name": "Tafsir Center of Quranic Studies",
-        "slug": "",
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
-        "id": 17,
-        "name": "Dr. Ghali",
-        "author_name": "Dr. Ghali",
-        "slug": "en-ghali",
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
-        "id": 95,
-        "name": "Tafheem-ul-Quran - Abul Ala Maududi",
-        "author_name": "Sayyid Abul Ala Maududi",
-        "slug": "en-al-maududi",
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
-        "id": 57,
-        "name": "Transliteration",
-        "author_name": "Transliteration",
-        "slug": "transliteration",
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
-        "id": 19,
-        "name": "English Translation (Pickthall)",
-        "author_name": "Mohammed Marmaduke William Pickthall",
-        "slug": "quran.en.pickthall",
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
-        "id": 22,
-        "name": "English Translation (Yusuf Ali)",
-        "author_name": "Yusuf Ali",
-        "slug": "quran.en.yusufali",
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
-        "id": 206,
-        "name": "Ruwwad Center",
-        "author_name": "Ruwwad Center",
-        "slug": null,
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
-        "id": 207,
-        "name": "Dr. T. B. Irving",
-        "author_name": "Dr. T. B. Irving",
-        "slug": "",
-        "lang_first_upper": "English",
-        "lang_all_lower": "english",
-        "iso_code": "en"
-    },
-    {
-        "id": 54,
-        "name": "Maulana Muhammad Junagarhi",
-        "author_name": "Maulana Muhammad Junagarhi",
-        "slug": "ur-junagarri",
-        "lang_first_upper": "Urdu",
-        "lang_all_lower": "urdu",
-        "iso_code": "ur"
-    },
-    {
-        "id": 156,
-        "name": "Fe Zilal al-Qur'an",
-        "author_name": "Sayyid Ibrahim Qutb",
-        "slug": "urdu-sayyid-qatab",
-        "lang_first_upper": "Urdu",
-        "lang_all_lower": "urdu",
-        "iso_code": "ur"
-    },
-    {
-        "id": 151,
-        "name": "Shaykh al-Hind Mahmud al-Hasan(with Tafsir E Usmani)",
-        "author_name": "Shaykh al-Hind Mahmud al-Hasan",
-        "slug": "tafsir-e-usmani",
-        "lang_first_upper": "Urdu",
-        "lang_all_lower": "urdu",
-        "iso_code": "ur"
-    },
-    {
-        "id": 158,
-        "name": "Bayan-ul-Quran",
-        "author_name": "Dr. Israr Ahmad",
-        "slug": "bayan-ul-quran",
-        "lang_first_upper": "Urdu",
-        "lang_all_lower": "urdu",
-        "iso_code": "ur"
-    },
-    {
-        "id": 97,
-        "name": "Tafheem e Qur'an - Syed Abu Ali Maududi",
-        "author_name": "Syed Abu Ali Maududi",
-        "slug": "ur-al-maududi",
-        "lang_first_upper": "Urdu",
-        "lang_all_lower": "urdu",
-        "iso_code": "ur"
     },
     {
         "id": 136,
@@ -324,24 +144,6 @@
         "iso_code": "bn"
     },
     {
-        "id": 163,
-        "name": "Sheikh Mujibur Rahman",
-        "author_name": "Darussalaam Publication",
-        "slug": "bn-sheikh-mujibur-rahman",
-        "lang_first_upper": "Bengali",
-        "lang_all_lower": "bengali",
-        "iso_code": "bn"
-    },
-    {
-        "id": 162,
-        "name": "Rawai Al-bayan",
-        "author_name": "Bayaan Foundation",
-        "slug": "bn-rawai-al-bayan",
-        "lang_first_upper": "Bengali",
-        "lang_all_lower": "bengali",
-        "iso_code": "bn"
-    },
-    {
         "id": 210,
         "name": "Dar Al-Salam Center",
         "author_name": "Dar Al-Salam Center",
@@ -387,15 +189,6 @@
         "iso_code": "uz"
     },
     {
-        "id": 143,
-        "name": "Muhammad Saleh Bamoki",
-        "author_name": "Muhammad Saleh Bamoki",
-        "slug": null,
-        "lang_first_upper": "Kurdish",
-        "lang_all_lower": "kurdish",
-        "iso_code": "ku"
-    },
-    {
         "id": 141,
         "name": "The Sabiq company",
         "author_name": "The Sabiq company",
@@ -403,15 +196,6 @@
         "lang_first_upper": "German",
         "lang_all_lower": "german",
         "iso_code": "de"
-    },
-    {
-        "id": 140,
-        "name": "Montada Islamic Foundation",
-        "author_name": "Montada Islamic Foundation",
-        "slug": null,
-        "lang_first_upper": "Spanish",
-        "lang_all_lower": "spanish",
-        "iso_code": "es"
     },
     {
         "id": 214,
@@ -459,15 +243,6 @@
         "iso_code": "gu"
     },
     {
-        "id": 224,
-        "name": "Abdul-Hamid Haidar & Kanhi Muhammad",
-        "author_name": "Abdul-Hamid Haidar & Kanhi Muhammad",
-        "slug": null,
-        "lang_first_upper": "Malayalam",
-        "lang_all_lower": "malayalam",
-        "iso_code": "ml"
-    },
-    {
         "id": 232,
         "name": "African Development Foundation",
         "author_name": "African Development Foundation",
@@ -504,15 +279,6 @@
         "iso_code": "th"
     },
     {
-        "id": 223,
-        "name": "Pioneers of Translation Center",
-        "author_name": "Pioneers of Translation Center",
-        "slug": null,
-        "lang_first_upper": "Tajik",
-        "lang_all_lower": "tajik",
-        "iso_code": "tg"
-    },
-    {
         "id": 222,
         "name": "Khalifa Altay",
         "author_name": "Khalifa Altay",
@@ -531,22 +297,13 @@
         "iso_code": "vi"
     },
     {
-        "id": 144,
-        "name": "Sofian S. Siregar",
-        "author_name": "Sofian S. Siregar",
-        "slug": "nl_sofian_s._siregar",
-        "lang_first_upper": "Dutch",
-        "lang_all_lower": "Dutch",
-        "iso_code": "nl"
-    },
-    {
         "id": 88,
         "name": "Hasan Efendi Nahi",
         "author_name": "Hasan Efendi Nahi",
         "slug": "al-hasan-efendi",
         "lang_first_upper": "Albanian",
         "lang_all_lower": "albanian",
-        "iso_code": "al"
+        "iso_code": "sq"
     },
     {
         "id": 87,
@@ -556,24 +313,6 @@
         "lang_first_upper": "Amharic",
         "lang_all_lower": "amharic",
         "iso_code": "am"
-    },
-    {
-        "id": 50,
-        "name": "Jan Trust Foundation",
-        "author_name": "Jan Trust Foundation",
-        "slug": "ta-jan-trust",
-        "lang_first_upper": "Tamil",
-        "lang_all_lower": "tamil",
-        "iso_code": "ta"
-    },
-    {
-        "id": 49,
-        "name": "Ali Muhsin Al-Barwani",
-        "author_name": "Ali Muhsin Al-Barwani",
-        "slug": "sw-ali-muhsin",
-        "lang_first_upper": "Swahili",
-        "lang_all_lower": "swahili",
-        "iso_code": "sw"
     },
     {
         "id": 48,
@@ -592,24 +331,6 @@
         "lang_first_upper": "Central khmer",
         "lang_all_lower": "central khmer",
         "iso_code": "km"
-    },
-    {
-        "id": 45,
-        "name": "Russian Translation ( Elmir Kuliev )",
-        "author_name": "Elmir Kuliev",
-        "slug": "quran.ru.kuliev",
-        "lang_first_upper": "Russian",
-        "lang_all_lower": "russian",
-        "iso_code": "ru"
-    },
-    {
-        "id": 77,
-        "name": "Turkish Translation(Diyanet)",
-        "author_name": "Diyanet Isleri",
-        "slug": "quran.tr.diyanet",
-        "lang_first_upper": "Turkish",
-        "lang_all_lower": "turkish",
-        "iso_code": "tr"
     },
     {
         "id": 39,
@@ -657,33 +378,6 @@
         "iso_code": "pt"
     },
     {
-        "id": 74,
-        "name": "Tajik",
-        "author_name": "AbdolMohammad Ayati",
-        "slug": "tg-ayati",
-        "lang_first_upper": "Tajik",
-        "lang_all_lower": "tajik",
-        "iso_code": "tg"
-    },
-    {
-        "id": 23,
-        "name": "Azerbaijani",
-        "author_name": "Azerbaijani",
-        "slug": "az-unknown",
-        "lang_first_upper": "Azeri",
-        "lang_all_lower": "azeri",
-        "iso_code": "az"
-    },
-    {
-        "id": 101,
-        "name": "Alauddin Mansour",
-        "author_name": "Alauddin Mansour",
-        "slug": null,
-        "lang_first_upper": "Uzbek",
-        "lang_all_lower": "uzbek",
-        "iso_code": "uz"
-    },
-    {
         "id": 53,
         "name": "Tatar",
         "author_name": "Tatar",
@@ -691,15 +385,6 @@
         "lang_first_upper": "Tatar",
         "lang_all_lower": "tatar",
         "iso_code": "tt"
-    },
-    {
-        "id": 47,
-        "name": "Albanian",
-        "author_name": "Albanian",
-        "slug": "sq-unknown",
-        "lang_first_upper": "Albanian",
-        "lang_all_lower": "albanian",
-        "iso_code": "al"
     },
     {
         "id": 44,
@@ -774,15 +459,6 @@
         "iso_code": "yo"
     },
     {
-        "id": 124,
-        "name": "Muslim Shahin",
-        "author_name": "Muslim Shahin",
-        "slug": null,
-        "lang_first_upper": "Turkish",
-        "lang_all_lower": "turkish",
-        "iso_code": "tr"
-    },
-    {
         "id": 46,
         "name": "Mahmud Muhammad Abduh",
         "author_name": "Mahmud Muhammad Abduh",
@@ -792,24 +468,6 @@
         "iso_code": "so"
     },
     {
-        "id": 113,
-        "name": "Khalifah Altai",
-        "author_name": "Khalifah Altai",
-        "slug": null,
-        "lang_first_upper": "Kazakh",
-        "lang_all_lower": "kazakh",
-        "iso_code": "kk"
-    },
-    {
-        "id": 112,
-        "name": "Shaban Britch",
-        "author_name": "Shaban Britch",
-        "slug": null,
-        "lang_first_upper": "Turkish",
-        "lang_all_lower": "turkish",
-        "iso_code": "tr"
-    },
-    {
         "id": 38,
         "name": "Maranao",
         "author_name": "Maranao",
@@ -817,15 +475,6 @@
         "lang_first_upper": "Maranao",
         "lang_all_lower": "maranao",
         "iso_code": "mrn"
-    },
-    {
-        "id": 89,
-        "name": "Albanian Translation",
-        "author_name": "Sherif Ahmeti\t",
-        "slug": "quran.al.ahmeti",
-        "lang_first_upper": "Albanian",
-        "lang_all_lower": "albanian",
-        "iso_code": "al"
     },
     {
         "id": 56,
@@ -855,42 +504,6 @@
         "iso_code": "ne"
     },
     {
-        "id": 37,
-        "name": "Malay Translation(Abdul Hameed and Kunhi)",
-        "author_name": "Abdul Hameed and Kunhi Mohammed",
-        "slug": "quran.ml.abdul.hameed",
-        "lang_first_upper": "Malayalam",
-        "lang_all_lower": "malayalam",
-        "iso_code": "ml"
-    },
-    {
-        "id": 43,
-        "name": "Portuguese Translation( Samir )",
-        "author_name": "Samir El-Hayek",
-        "slug": "quran,pt.samir",
-        "lang_first_upper": "Portuguese",
-        "lang_all_lower": "portuguese",
-        "iso_code": "pt"
-    },
-    {
-        "id": 28,
-        "name": "Spanish Translation(Cortes)",
-        "author_name": "Julio Cortes",
-        "slug": "quran.es.cortes",
-        "lang_first_upper": "Spanish",
-        "lang_all_lower": "spanish",
-        "iso_code": "es"
-    },
-    {
-        "id": 51,
-        "name": "Thai Translatio (King Fahad Quran Complex)",
-        "author_name": "King Fahad Quran Complex",
-        "slug": "quran.th.quran.complex",
-        "lang_first_upper": "Thai",
-        "lang_all_lower": "thai",
-        "iso_code": "th"
-    },
-    {
         "id": 111,
         "name": "Ghali Apapur Apaghuna",
         "author_name": "Ghali Apapur Apaghuna",
@@ -900,123 +513,6 @@
         "iso_code": "om"
     },
     {
-        "id": 115,
-        "name": "Abubakar Mahmood Jummi",
-        "author_name": "Abubakar Mahmood Jummi",
-        "slug": null,
-        "lang_first_upper": "Hausa",
-        "lang_all_lower": "hausa",
-        "iso_code": "ha"
-    },
-    {
-        "id": 31,
-        "name": "French Translation(Muhammad Hamidullah)",
-        "author_name": "Muhammad Hamidullah",
-        "slug": "quran.fr.hamidullah",
-        "lang_first_upper": "French",
-        "lang_all_lower": "french",
-        "iso_code": "fr"
-    },
-    {
-        "id": 29,
-        "name": "Hussein Taji Kal Dari",
-        "author_name": "Hussein Taji Kal Dari",
-        "slug": "fr-hussein-taji",
-        "lang_first_upper": "Persian",
-        "lang_all_lower": "persian",
-        "iso_code": "fa"
-    },
-    {
-        "id": 208,
-        "name": "Abu Reda Muhammad ibn Ahmad",
-        "author_name": "Abu Reda Muhammad ibn Ahmad",
-        "slug": null,
-        "lang_first_upper": "German",
-        "lang_all_lower": "german",
-        "iso_code": "de"
-    },
-    {
-        "id": 209,
-        "name": "Othman al-Sharif",
-        "author_name": "Othman al-Sharif",
-        "slug": null,
-        "lang_first_upper": "Italian",
-        "lang_all_lower": "italian",
-        "iso_code": "it"
-    },
-    {
-        "id": 133,
-        "name": "Abdul Hameed Baqavi",
-        "author_name": "Abdul Hameed Baqavi",
-        "slug": null,
-        "lang_first_upper": "Tamil",
-        "lang_all_lower": "tamil",
-        "iso_code": "ta"
-    },
-    {
-        "id": 25,
-        "name": "Muhamed Mehanovi\u0107",
-        "author_name": "Muhamed Mehanovi\u0107",
-        "slug": "bs-unknown",
-        "lang_first_upper": "Bosnian",
-        "lang_all_lower": "bosnian",
-        "iso_code": "bs"
-    },
-    {
-        "id": 221,
-        "name": "Hasan Abdul-Karim",
-        "author_name": "Hasan Abdul-Karim",
-        "slug": null,
-        "lang_first_upper": "Vietnamese",
-        "lang_all_lower": "vietnamese",
-        "iso_code": "vi"
-    },
-    {
-        "id": 219,
-        "name": "Hamed Choi",
-        "author_name": "Hamed Choi",
-        "slug": null,
-        "lang_first_upper": "Korean",
-        "lang_all_lower": "korean",
-        "iso_code": "ko"
-    },
-    {
-        "id": 52,
-        "name": "Elmalili Hamdi Yazir",
-        "author_name": "Elmalili Hamdi Yazir\t",
-        "slug": "tr-hamdi",
-        "lang_first_upper": "Turkish",
-        "lang_all_lower": "turkish",
-        "iso_code": "tr"
-    },
-    {
-        "id": 213,
-        "name": "Dr. Abu Bakr Muhammad Zakaria",
-        "author_name": "Dr. Abu Bakr Muhammad Zakaria",
-        "slug": null,
-        "lang_first_upper": "Bengali",
-        "lang_all_lower": "bengali",
-        "iso_code": "bn"
-    },
-    {
-        "id": 199,
-        "name": "Noor International Center",
-        "author_name": "Noor International Center",
-        "slug": null,
-        "lang_first_upper": "Spanish",
-        "lang_all_lower": "spanish",
-        "iso_code": "es"
-    },
-    {
-        "id": 218,
-        "name": "Saeed Sato",
-        "author_name": "Saeed Sato",
-        "slug": null,
-        "lang_first_upper": "Japanese",
-        "lang_all_lower": "japanese",
-        "iso_code": "ja"
-    },
-    {
         "id": 228,
         "name": "Ruwwad Center",
         "author_name": "Translation Pioneers Center",
@@ -1024,15 +520,6 @@
         "lang_first_upper": "Sinhala, sinhalese",
         "lang_all_lower": "sinhala, sinhalese",
         "iso_code": "si"
-    },
-    {
-        "id": 126,
-        "name": "Besim Korkut",
-        "author_name": "Besim Korkut",
-        "slug": null,
-        "lang_first_upper": "Bosnian",
-        "lang_all_lower": "bosnian",
-        "iso_code": "bs"
     },
     {
         "id": 122,
@@ -1053,15 +540,6 @@
         "iso_code": "as"
     },
     {
-        "id": 127,
-        "name": "Muhammad Sodik Muhammad Yusuf",
-        "author_name": "Muhammad Sodik Muhammad Yusuf",
-        "slug": "",
-        "lang_first_upper": "Uzbek",
-        "lang_all_lower": "uzbek",
-        "iso_code": "uz"
-    },
-    {
         "id": 118,
         "name": "Zakaria Abulsalam",
         "author_name": "Zakaria Abulsalam",
@@ -1069,33 +547,6 @@
         "lang_first_upper": "Pashto",
         "lang_all_lower": "pashto",
         "iso_code": "ps"
-    },
-    {
-        "id": 109,
-        "name": "Muhammad Makin",
-        "author_name": "Muhammad Makin",
-        "slug": null,
-        "lang_first_upper": "Chinese",
-        "lang_all_lower": "chinese",
-        "iso_code": "zh"
-    },
-    {
-        "id": 27,
-        "name": "Frank Bubenheim and Nadeem",
-        "author_name": "Frank Bubenheim and Nadeem",
-        "slug": "de-bubenheim",
-        "lang_first_upper": "German",
-        "lang_all_lower": "german",
-        "iso_code": "de"
-    },
-    {
-        "id": 33,
-        "name": "Indonesian Islamic affairs ministry",
-        "author_name": "Indonesian Islamic affairs ministry",
-        "slug": "quran.id",
-        "lang_first_upper": "Indonesian",
-        "lang_all_lower": "indonesian",
-        "iso_code": "id"
     },
     {
         "id": 771,
@@ -1107,69 +558,6 @@
         "iso_code": "kn"
     },
     {
-        "id": 172,
-        "name": "Turkish Mokhtasar",
-        "author_name": "Al-Mukhtasar",
-        "slug": null,
-        "lang_first_upper": "Turkish",
-        "lang_all_lower": "turkish",
-        "iso_code": "tr"
-    },
-    {
-        "id": 174,
-        "name": "Indonesian Mokhtasar",
-        "author_name": "Al-Mukhtasar",
-        "slug": null,
-        "lang_first_upper": "Indonesian",
-        "lang_all_lower": "indonesian",
-        "iso_code": "id"
-    },
-    {
-        "id": 175,
-        "name": "Bosnian Mokhtasar",
-        "author_name": "Al-Mukhtasar",
-        "slug": null,
-        "lang_first_upper": "Bosnian",
-        "lang_all_lower": "bosnian",
-        "iso_code": "bs"
-    },
-    {
-        "id": 176,
-        "name": "Italian Mokhtasar",
-        "author_name": "Al-Mukhtasar",
-        "slug": null,
-        "lang_first_upper": "Italian",
-        "lang_all_lower": "italian",
-        "iso_code": "it"
-    },
-    {
-        "id": 177,
-        "name": "Vietnamese Mokhtasar",
-        "author_name": "Al-Mukhtasar",
-        "slug": null,
-        "lang_first_upper": "Vietnamese",
-        "lang_all_lower": "vietnamese",
-        "iso_code": "vi"
-    },
-    {
-        "id": 178,
-        "name": "Russian Mokhtasar",
-        "author_name": "Al-Mukhtasar",
-        "slug": null,
-        "lang_first_upper": "Russian",
-        "lang_all_lower": "russian",
-        "iso_code": "ru"
-    },
-    {
-        "id": 180,
-        "name": "Bengali Mokhtasar",
-        "author_name": "Al-Mukhtasar",
-        "slug": null,
-        "lang_first_upper": "Bengali",
-        "lang_all_lower": "bengali",
-        "iso_code": "bn"
-    },
-    {
         "id": 181,
         "name": "Persian Mokhtasar",
         "author_name": "Al-Mukhtasar",
@@ -1177,33 +565,6 @@
         "lang_first_upper": "Northern sami",
         "lang_all_lower": "northern sami",
         "iso_code": "se"
-    },
-    {
-        "id": 183,
-        "name": "Japanese Mokhtasar",
-        "author_name": "Al-Mukhtasar",
-        "slug": null,
-        "lang_first_upper": "Japanese",
-        "lang_all_lower": "japanese",
-        "iso_code": "ja"
-    },
-    {
-        "id": 182,
-        "name": "Chinese Mokhtasar",
-        "author_name": "Al-Mukhtasar",
-        "slug": "",
-        "lang_first_upper": "Chinese",
-        "lang_all_lower": "chinese",
-        "iso_code": "zh"
-    },
-    {
-        "id": 179,
-        "name": "Tagalog Mokhtasar",
-        "author_name": "Al-Mukhtasar",
-        "slug": null,
-        "lang_first_upper": "Tagalog",
-        "lang_all_lower": "tagalog",
-        "iso_code": "tl"
     },
     {
         "id": 774,
@@ -1215,82 +576,10 @@
         "iso_code": "rw"
     },
     {
-        "id": 776,
-        "name": "Spanish Mokhtasar",
-        "author_name": "Spanish Mokhtasar",
-        "slug": "",
-        "lang_first_upper": "Spanish",
-        "lang_all_lower": "spanish",
-        "iso_code": "es"
-    },
-    {
-        "id": 798,
-        "name": "Abdul Hamid Silika",
-        "author_name": "Abdul Hamid Silika",
-        "slug": null,
-        "lang_first_upper": "Yau,yuw",
-        "lang_all_lower": "yau,yuw",
-        "iso_code": "es"
-    },
-    {
-        "id": 792,
-        "name": "Khmer Mokhtasar",
-        "author_name": "Khmer Mokhtasar",
-        "slug": null,
-        "lang_first_upper": "Central khmer",
-        "lang_all_lower": "central khmer",
-        "iso_code": "km"
-    },
-    {
         "id": 796,
         "name": "Baba Mamady Jani",
         "author_name": "Baba Mamady Jani",
         "slug": null,
-        "lang_first_upper": "Bambara",
-        "lang_all_lower": "bambara",
-        "iso_code": "bm"
-    },
-    {
-        "id": 791,
-        "name": "Malayalam Mokhtasar",
-        "author_name": "Malayalam Mokhtasar",
-        "slug": null,
-        "lang_first_upper": "Malayalam",
-        "lang_all_lower": "malayalam",
-        "iso_code": "ml"
-    },
-    {
-        "id": 782,
-        "name": "Islamic and Cultural League",
-        "author_name": "Islamic and Cultural League",
-        "slug": "",
-        "lang_first_upper": "Romanian",
-        "lang_all_lower": "romanian",
-        "iso_code": "ro"
-    },
-    {
-        "id": 790,
-        "name": "Assamese Mokhtasar",
-        "author_name": "Assamese Mokhtasar",
-        "slug": null,
-        "lang_first_upper": "Assamese",
-        "lang_all_lower": "assamese",
-        "iso_code": "as"
-    },
-    {
-        "id": 779,
-        "name": "Rashid Maash",
-        "author_name": "Rashid Maash",
-        "slug": "fr-rashid-maash",
-        "lang_first_upper": "French",
-        "lang_all_lower": "french",
-        "iso_code": "fr"
-    },
-    {
-        "id": 795,
-        "name": "Suliman Kanti",
-        "author_name": "Suliman Kanti",
-        "slug": "",
         "lang_first_upper": "Bambara",
         "lang_all_lower": "bambara",
         "iso_code": "bm"
@@ -1303,14 +592,5 @@
         "lang_first_upper": "Dari",
         "lang_all_lower": "dari",
         "iso_code": "prs"
-    },
-    {
-        "id": 173,
-        "name": "French Mokhtasar",
-        "author_name": "Al-Mukhtasar",
-        "slug": null,
-        "lang_first_upper": "French",
-        "lang_all_lower": "french",
-        "iso_code": "fr"
     }
 ]
