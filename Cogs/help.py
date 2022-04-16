@@ -13,7 +13,7 @@ class Help(commands.Cog):
     def __init__(self, bot):
     
         self.bot = bot
-        self.data = ut.readJSON(ut.readJSON('./Data/JSON/help.json'))
+        self.data = ut.readJSON(ut.readJSON('../Data/JSON/help.json'))
     
     def setInitEmbed(self,ctx):
         icon_url = "https://cdn.discordapp.com/avatars/958426940581232660/4e1e08d2e06568022f845afcf7cc7b9a?size=512"
