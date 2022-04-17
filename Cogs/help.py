@@ -60,11 +60,16 @@ class Help(commands.Cog):
                     embed.timestamp = datetime.datetime.now().astimezone()
                     await ctx.send(embed=embed)
                     return
-                else:
+                else:   
+                    if "help" in key:
+                        help_ = ""
+                    else:
+                        help_ = "help"
                     embed = self.setInitEmbed(ctx)
                     for i in self.data['helpFull'][key]:
+                     
                         embed.add_field(
-                            name=f"{i['title']}", value=f"{i['text']}\n\n~~~  exmaple: **{i['example']}\n\n**", inline=False)
+                            name=f"{help_}{i['title']}", value=f"{i['text']}\n\n~~~  exmaple: **{i['example']}\n\n**", inline=False)
                     await ctx.send(embed=embed)
                     return
             else:

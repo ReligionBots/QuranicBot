@@ -17,23 +17,35 @@
         },
         {
             "id": 3,
+            "title": "prefix",
+            "text": "call "
+        },
+        {
+            "id": 4,
             "title": "languages",
             "text": "All the languages that can be translated will be displayed"
         }
     ],
     "helpFull": {
+        "prefix": [
+            {
+                "id": 0,
+                "title": "prefix *",
+                "text": "Use the Surah number and the Ayah number to get the Ayah in the Surah you want separated by a colon.",
+                "example": "~prefix *"
+            }],
         "Quran": [
             {
                 "id": 0,
                 "title": "Quran [Surah]:[Ayah]",
                 "text": "Use the Surah number and the Ayah number to get the Ayah in the Surah you want separated by a colon.",
-                "example": "Quran 4:5"
+                "example": "~Quran 4:5"
             },
             {
                 "id": 1,
                 "title": "Quran [Surah]:[Ayah]-[Ayah]",
                 "text": "Use the Surah number then the range of Ayah you want to get not more than 15 ayahs, separated by a hyphen.",
-                "example": "Quran 4:5-15"
+                "example": "~Quran 4:5-15"
             }
         ],
         "tQuran": [
@@ -41,13 +53,13 @@
                 "id": 0,
                 "title": "tQuran [Surah]:[Ayah] [lang] [lang] [lang] [lang] [lang]",
                 "text": "Use the Surah number then the ayah separated by a colon, also upto 5 languages, with their original names, or codes(short names)",
-                "example": "tQuran 5:2 en ku tr arabic urdu"
+                "example": "~tQuran 5:2 en ku tr arabic urdu"
             },
             {
                 "id": 1,
                 "title": "tQuran [Surah]:[Ayah]-[Ayah] [lang]",
                 "text": "Use the Surah number then the Ayah separated by a colon, and to which Ayah Separated by a hyphen\nThen the language, make sure the range is not more than 15 ",
-                "example": "tQuran 4:5-15 en"
+                "example": "~tQuran 4:5-15 en"
             }
         ],
         "languages": [
