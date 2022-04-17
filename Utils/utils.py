@@ -7,11 +7,13 @@ from discord.ext import commands
 directory= {
     "extJSON": "./Data/JSON/extensions.json",
     "transJSON": "./Data/JSON/translations.json"
+   ,"helpJSON":"./Data/JSON/help.json"
 }
 
 # directory= {
 #     "extJSON": "QuranicBot/Data/JSON/extensions.json",
 #     "transJSON": "QuranicBot/Data/JSON/translations.json"
+#     ,"helpJSON":"QuranicBot/Data/JSON/help.json"
 # }
 
 
