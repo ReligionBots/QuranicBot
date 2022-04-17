@@ -12,6 +12,7 @@ class Translations(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.languages = ut.readJSON(ut.directory['transJSON'])
+        self.data = ut.readJSON(ut.directory['helpJSON'])
         
     def setInitEmbed(self,ctx,data, bit):
         new_data = data['chapter_details']['chapter']
@@ -182,13 +183,12 @@ class Translations(commands.Cog):
         
         @commands.command(pass_context=True)
         async def languages(self, ctx, string: str):        
-                # value = ""
-                #   embed = self.setInitEmbed(ctx)
-                #    for i in self.data['helpFull'][key]:
-                #         embed.add_field(
-                #             name=f"code: {i['lang_code']}", value=f"name: {i['lang_name']}", inline=True)
-                #     embed.timestamp = datetime.datetime.now().astimezone()
-                #     await ctx.send(embed=embed)
+            value = ""
+            embed = self.setInitEmbed(ctx)
+            for i in self.data['helpFull']['languages_data']:
+                embed.add_field(name=f"code: {i['lang_code']}", value=f"name: {i['lang_name']}", inline=True)
+            embed.timestamp = dt.datetime.now().astimezone()
+            await ctx.send(embed=embed)
             pass
 
 def setup(bot):
