@@ -32,9 +32,13 @@ class Help(commands.Cog):
     async def help(self, ctx, *args):
         if not args:
             embed = self.setInitEmbed(ctx)
-            
+
             for i in self.data['helpIntro']:
-                embed.add_field(name=i['title'], value=i['text'], inline=False)
+                if "help" in key:
+                    help_ = ""
+                else:
+                    help_ = "help"
+                embed.add_field(name=f"{help_}{i['title']}", value=i['text'], inline=False)
             await ctx.send(embed=embed)
         else:
             found_1 = False
@@ -61,15 +65,11 @@ class Help(commands.Cog):
                     await ctx.send(embed=embed)
                     return
                 else:   
-                    if "help" in key:
-                        help_ = ""
-                    else:
-                        help_ = "help"
                     embed = self.setInitEmbed(ctx)
                     for i in self.data['helpFull'][key]:
                      
                         embed.add_field(
-                            name=f"{help_}{i['title']}", value=f"{i['text']}\n\n~~~  exmaple: **{i['example']}\n\n**", inline=False)
+                            name=f"{i['title']}", value=f"{i['text']}\n\n~~~  exmaple: **{i['example']}\n\n**", inline=False)
                     await ctx.send(embed=embed)
                     return
             else:
