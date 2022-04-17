@@ -4,17 +4,17 @@ import requests as req
 from discord.ext import commands
 #import http.client as ht
 
-# directory= {
-#     "extJSON": "./Data/JSON/extensions.json",
-#     "transJSON": "./Data/JSON/translations.json"
-#    ,"helpJSON":"./Data/JSON/help.json"
-# }
-
 directory= {
-    "extJSON": "QuranicBot/Data/JSON/extensions.json",
-    "transJSON": "QuranicBot/Data/JSON/translations.json"
-    ,"helpJSON":"QuranicBot/Data/JSON/help.json"
+    "extJSON": "./Data/JSON/extensions.json",
+    "transJSON": "./Data/JSON/translations.json"
+   ,"helpJSON":"./Data/JSON/help.json"
 }
+
+# directory= {
+#     "extJSON": "QuranicBot/Data/JSON/extensions.json",
+#     "transJSON": "QuranicBot/Data/JSON/translations.json"
+#     ,"helpJSON":"QuranicBot/Data/JSON/help.json"
+# }
 
 
 
