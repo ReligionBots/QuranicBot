@@ -38,7 +38,7 @@ class Help(commands.Cog):
                     help_ = ""
                 else:
                     help_ = "help"
-                embed.add_field(name=f"{help_}{i['title']}", value=i['text'], inline=False)
+                embed.add_field(name=f"{help_} {i['title']}", value=i['text'], inline=False)
             await ctx.send(embed=embed)
         else:
             found_1 = False
