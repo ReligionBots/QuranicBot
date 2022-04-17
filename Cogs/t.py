@@ -180,7 +180,16 @@ class Translations(commands.Cog):
         else:
             await ctx.message.reply(embed=self.errorEmbed("Wrong Entering", "Please Enter the translation or numbers correctly."))
         
-
+        @commands.command(pass_context=True)
+        async def languages(self, ctx, string: str):        
+                # value = ""
+                #   embed = self.setInitEmbed(ctx)
+                #    for i in self.data['helpFull'][key]:
+                #         embed.add_field(
+                #             name=f"code: {i['lang_code']}", value=f"name: {i['lang_name']}", inline=True)
+                #     embed.timestamp = datetime.datetime.now().astimezone()
+                #     await ctx.send(embed=embed)
+            pass
 
 def setup(bot):
     bot.add_cog(Translations(bot))

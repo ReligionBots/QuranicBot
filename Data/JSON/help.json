@@ -31,7 +31,7 @@
             {
                 "id": 0,
                 "title": "prefix [new prefix]",
-                "text": "Use the Surah number and the Ayah number to get the Ayah in the Surah you want separated by a colon.",
+                "text": "Add a new prefix after the prefix command and change your command prefix (only Admin)",
                 "example": "~prefix *"
             }],
         "Quran": [

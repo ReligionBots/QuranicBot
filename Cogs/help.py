@@ -56,22 +56,12 @@ class Help(commands.Cog):
                     await ctx.send(embed=self.handleEmbed("Wrong Entering", "Please make sure you entered the right commands"))
                     return
 
-                if 'languages' in key:
-                    value =""
-                    embed = self.setInitEmbed(ctx)
-                    for i in self.data['helpFull'][key + '_data']:
-                        embed.add_field(name=f"code: {i['lang_code']}", value=f"name: {i['lang_name']}", inline=True)
-                    embed.timestamp = datetime.datetime.now().astimezone()
-                    await ctx.send(embed=embed)
-                    return
-                else:   
-                    embed = self.setInitEmbed(ctx)
-                    for i in self.data['helpFull'][key]:
-                     
-                        embed.add_field(
-                            name=f"{i['title']}", value=f"{i['text']}\n\n~~~  exmaple: **{i['example']}\n\n**", inline=False)
-                    await ctx.send(embed=embed)
-                    return
+                embed = self.setInitEmbed(ctx)
+                for i in self.data['helpFull'][key]:
+                    embed.add_field(
+                        name=f"{i['title']}", value=f"{i['text']}\n\n~~~  exmaple: **{i['example']}\n\n**", inline=False)
+                await ctx.send(embed=embed)
+                return
             else:
                 await ctx.send(embed=self.handleEmbed("Wrong Entering", "Please make sure you entered the right commands"))
                 return
