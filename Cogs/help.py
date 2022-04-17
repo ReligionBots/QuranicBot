@@ -65,7 +65,14 @@ class Help(commands.Cog):
             else:
                 await ctx.send(embed=self.handleEmbed("Wrong Entering", "Please make sure you entered the right commands"))
                 return
-       
+    @commands.command(pass_context=True)
+    async def languages(self, ctx):
+        embed = self.setInitEmbed(ctx)
+        for i in self.data['helpFull']['languages_data']:
+            embed.add_field(name=f"code: {i['lang_code']}", value=f"name: {i['lang_name']}", inline=True)
+        embed.timestamp = datetime.datetime.now().astimezone()
+        await ctx.send(embed=embed)
+        pass
 
     @commands.Cog.listener()
     async def on_message(self, message):
