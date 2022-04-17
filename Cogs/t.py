@@ -182,8 +182,7 @@ class Translations(commands.Cog):
             await ctx.message.reply(embed=self.errorEmbed("Wrong Entering", "Please Enter the translation or numbers correctly."))
         
     @commands.command(pass_context=True)
-    async def languages(self, ctx, string: str):        
-        value = ""
+    async def languages(self, ctx):
         embed = self.setInitEmbed(ctx)
         for i in self.data['helpFull']['languages_data']:
             embed.add_field(name=f"code: {i['lang_code']}", value=f"name: {i['lang_name']}", inline=True)
