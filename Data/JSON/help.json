@@ -47,7 +47,7 @@
                 "id": 1,
                 "title": "tQuran [Surah]:[Ayah]-[Ayah] [lang]",
                 "text": "Use the Surah number then the Ayah separated by a colon, and to which Ayah Separated by a hyphen\nThen the language, make sure the range is not more than 15 ",
-                "example": "tQuran 5:2 en"
+                "example": "tQuran 4:5-15 en"
             }
         ],
         "languages": [
@@ -312,6 +312,336 @@
                 "lang_code": "bm"
             },
             {
+                "lang_name": "dari",
+                "lang_code": "prs"
+            },
+            {
+                "id": 199,
+                "lang_name": "english",
+                "lang_code": "en"
+            },
+            {
+                "id": 200,
+                "lang_name": "urdu",
+                "lang_code": "ur"
+            },
+            {
+                "id": 201,
+                "lang_name": "russian",
+                "lang_code": "ru"
+            },
+            {
+                "id": 202,
+                "lang_name": "divehi, dhivehi, maldivian",
+                "lang_code": "dv"
+            },
+            {
+                "id": 203,
+                "lang_name": "uighur, uyghur",
+                "lang_code": "ug"
+            },
+            {
+                "id": 204,
+                "lang_name": "malayalam",
+                "lang_code": "ml"
+            },
+            {
+                "id": 205,
+                "lang_name": "kurdish",
+                "lang_code": "ku"
+            },
+            {
+                "id": 206,
+                "lang_name": "spanish",
+                "lang_code": "es"
+            },
+            {
+                "id": 207,
+                "lang_name": "azeri",
+                "lang_code": "az"
+            },
+            {
+                "id": 208,
+                "lang_name": "french",
+                "lang_code": "fr"
+            },
+            {
+                "id": 209,
+                "lang_name": "persian",
+                "lang_code": "fa"
+            },
+            {
+                "id": 210,
+                "lang_name": "tajik",
+                "lang_code": "tg"
+            },
+            {
+                "id": 211,
+                "lang_name": "japanese",
+                "lang_code": "ja"
+            },
+            {
+                "id": 212,
+                "lang_name": "indonesian",
+                "lang_code": "id"
+            },
+            {
+                "id": 213,
+                "lang_name": "italian",
+                "lang_code": "it"
+            },
+            {
+                "id": 214,
+                "lang_name": "bengali",
+                "lang_code": "bn"
+            },
+            {
+                "id": 215,
+                "lang_name": "turkish",
+                "lang_code": "tr"
+            },
+            {
+                "id": 216,
+                "lang_name": "tagalog",
+                "lang_code": "tl"
+            },
+            {
+                "id": 217,
+                "lang_name": "ukrainian",
+                "lang_code": "uk"
+            },
+            {
+                "id": 218,
+                "lang_name": "tamil",
+                "lang_code": "ta"
+            },
+            {
+                "id": 219,
+                "lang_name": "uzbek",
+                "lang_code": "uz"
+            },
+            {
+                "id": 220,
+                "lang_name": "german",
+                "lang_code": "de"
+            },
+            {
+                "id": 221,
+                "lang_name": "bosnian",
+                "lang_code": "bs"
+            },
+            {
+                "id": 222,
+                "lang_name": "telugu",
+                "lang_code": "te"
+            },
+            {
+                "id": 223,
+                "lang_name": "marathi",
+                "lang_code": "mr"
+            },
+            {
+                "id": 224,
+                "lang_name": "hebrew",
+                "lang_code": "he"
+            },
+            {
+                "id": 225,
+                "lang_name": "gujarati",
+                "lang_code": "gu"
+            },
+            {
+                "id": 226,
+                "lang_name": "ganda",
+                "lang_code": "lg"
+            },
+            {
+                "id": 227,
+                "lang_name": "dutch",
+                "lang_code": "nl"
+            },
+            {
+                "id": 228,
+                "lang_name": "swahili",
+                "lang_code": "sw"
+            },
+            {
+                "id": 229,
+                "lang_name": "thai",
+                "lang_code": "th"
+            },
+            {
+                "id": 230,
+                "lang_name": "kazakh",
+                "lang_code": "kk"
+            },
+            {
+                "id": 231,
+                "lang_name": "vietnamese",
+                "lang_code": "vi"
+            },
+            {
+                "id": 232,
+                "lang_name": "albanian",
+                "lang_code": "sq"
+            },
+            {
+                "id": 233,
+                "lang_name": "amharic",
+                "lang_code": "am"
+            },
+            {
+                "id": 234,
+                "lang_name": "swedish",
+                "lang_code": "sv"
+            },
+            {
+                "id": 235,
+                "lang_name": "central khmer",
+                "lang_code": "km"
+            },
+            {
+                "id": 236,
+                "lang_name": "malay",
+                "lang_code": "ms"
+            },
+            {
+                "id": 237,
+                "lang_name": "korean",
+                "lang_code": "ko"
+            },
+            {
+                "id": 238,
+                "lang_name": "finnish",
+                "lang_code": "fi"
+            },
+            {
+                "id": 239,
+                "lang_name": "czech",
+                "lang_code": "cs"
+            },
+            {
+                "id": 240,
+                "lang_name": "portuguese",
+                "lang_code": "pt"
+            },
+            {
+                "id": 241,
+                "lang_name": "tatar",
+                "lang_code": "tt"
+            },
+            {
+                "id": 242,
+                "lang_name": "Romanian",
+                "lang_code": "ro"
+            },
+            {
+                "id": 243,
+                "lang_name": "polish",
+                "lang_code": "pl"
+            },
+            {
+                "id": 244,
+                "lang_name": "norwegian",
+                "lang_code": "no"
+            },
+            {
+                "id": 245,
+                "lang_name": "Sindhi",
+                "lang_code": "sd"
+            },
+            {
+                "id": 246,
+                "lang_name": "chechen",
+                "lang_code": "ce"
+            },
+            {
+                "id": 247,
+                "lang_name": "Bulgarian",
+                "lang_code": "bg"
+            },
+            {
+                "id": 248,
+                "lang_name": "Amazigh",
+                "lang_code": "zgh"
+            },
+            {
+                "id": 249,
+                "lang_name": "yoruba",
+                "lang_code": "yo"
+            },
+            {
+                "id": 250,
+                "lang_name": "somali",
+                "lang_code": "so"
+            },
+            {
+                "id": 251,
+                "lang_name": "maranao",
+                "lang_code": "mrn"
+            },
+            {
+                "id": 252,
+                "lang_name": "chinese",
+                "lang_code": "zh"
+            },
+            {
+                "id": 253,
+                "lang_name": "hausa",
+                "lang_code": "ha"
+            },
+            {
+                "id": 254,
+                "lang_name": "nepali",
+                "lang_code": "ne"
+            },
+            {
+                "id": 255,
+                "lang_name": "oromo",
+                "lang_code": "om"
+            },
+            {
+                "id": 256,
+                "lang_name": "sinhala, sinhalese",
+                "lang_code": "si"
+            },
+            {
+                "id": 257,
+                "lang_name": "hindi",
+                "lang_code": "hi"
+            },
+            {
+                "id": 258,
+                "lang_name": "assamese",
+                "lang_code": "as"
+            },
+            {
+                "id": 259,
+                "lang_name": "pashto",
+                "lang_code": "ps"
+            },
+            {
+                "id": 260,
+                "lang_name": "kannada",
+                "lang_code": "kn"
+            },
+            {
+                "id": 261,
+                "lang_name": "northern sami",
+                "lang_code": "se"
+            },
+            {
+                "id": 262,
+                "lang_name": "kinyarwanda",
+                "lang_code": "rw"
+            },
+            {
+                "id": 263,
+                "lang_name": "bambara",
+                "lang_code": "bm"
+            },
+            {
+                "id": 264,
                 "lang_name": "dari",
                 "lang_code": "prs"
             }

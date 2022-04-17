@@ -36,9 +36,41 @@ class Help(commands.Cog):
             for i in self.data['helpIntro']:
                 embed.add_field(name=i['title'], value=i['text'], inline=False)
             await ctx.send(embed=embed)
-        # else:
-            
-        # pass
+        else:
+            found_1 = False
+            # this is for making sure all values are not numeric
+            if len(args) == 1 and args[0].isalpha():
+                # here we check if the arg is similar to any commands we have
+                for i in self.data['helpIntro']:
+                    if args[0].strip() == i['title']:
+                        print(args[0])
+                        key = i['title']
+                        found_1 = True
+                # then we check if the values we want is found or not
+                print(found_1)
+                if not found_1:
+                    await ctx.send(embed=self.handleEmbed("Wrong Entering", "Please make sure you entered the right commands"))
+                    return
+
+                if 'languages' in key:
+                    value =""
+                    embed = self.setInitEmbed(ctx)
+                    for i in self.data['helpFull'][key]:
+                        embed.add_field(name=f"code: {i['lang_code']}", value=f"name: {i['lang_name']}", inline=True)
+                    embed.timestamp = datetime.datetime.now().astimezone()
+                    await ctx.send(embed=embed)
+                    return
+                else:
+                    embed = self.setInitEmbed(ctx)
+                    for i in self.data['helpFull'][key]:
+                        embed.add_field(
+                            name=f"{i['title']}", value=f"{i['text']}\n\n~~~  exmaple: **{i['example']}\n\n**", inline=False)
+                    await ctx.send(embed=embed)
+                    return
+            else:
+                await ctx.send(embed=self.handleEmbed("Wrong Entering", "Please make sure you entered the right commands"))
+                return
+       
 
     @commands.Cog.listener()
     async def on_message(self, message):

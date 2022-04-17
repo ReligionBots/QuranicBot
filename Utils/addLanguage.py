@@ -57,10 +57,12 @@ dataHelp = ut.readJSON('QuranicBot/Data/JSON/help.json')
 
 for i in filteredDic:
     data['languages'].append({
+        "id": len(data['languages']),
         "lang_name": i['lang_all_lower'],
         "lang_code": i['iso_code'],
     })
     dataHelp['helpFull']['languages'].append({
+        "id": len(data['languages']),
         "lang_name": i['lang_all_lower'],
         "lang_code": i['iso_code'],
     })
