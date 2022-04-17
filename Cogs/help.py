@@ -34,7 +34,7 @@ class Help(commands.Cog):
             embed = self.setInitEmbed(ctx)
 
             for i in self.data['helpIntro']:
-                if "help" in key:
+                if "help" in i['title']:
                     help_ = ""
                 else:
                     help_ = "help"
