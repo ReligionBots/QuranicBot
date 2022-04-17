@@ -79,12 +79,13 @@ class Help(commands.Cog):
         check_mark, prefix = '✅', None
         try:
             prefix = ut.get_prefix_2(message)
-            string_1, string_2, string_3 = f"{prefix}tQuran", f"{prefix}Quran", f"{prefix}help"
+            string_1, string_2, string_3,string_4 = f"{prefix}tQuran", f"{prefix}Quran", f"{prefix}help",f"{prefix}languages"
             msg = message.content
             logics = (
                 msg.startswith(string_1),
                 msg.startswith(string_2),
-                msg.startswith(string_3)
+                msg.startswith(string_3),
+                msg.startswith(string_4)
             )
             if any(logics):
                 await message.add_reaction(check_mark)
