@@ -16,11 +16,11 @@ class Help(commands.Cog):
         self.data = ut.readJSON(ut.directory['helpJSON'])
     
     def setInitEmbed(self,ctx):
-        icon_url = "https://cdn.discordapp.com/avatars/958426940581232660/4e1e08d2e06568022f845afcf7cc7b9a?size=512"
+        url, icon_url = "https://quran.com", "https://cdn.discordapp.com/avatars/958426940581232660/4e1e08d2e06568022f845afcf7cc7b9a?size=512"
         prefix = ut.get_prefix_2(ctx)
         embed = discord.Embed(title=f"Your prefix is: {prefix}",color=ctx.author.color)
 
-        embed.set_author(name=f"Holy Quran", icon_url=icon_url)
+        embed.set_author(name=f"Holy Quran",url=url, icon_url=icon_url)
                     
         embed.timestamp = datetime.datetime.now().astimezone()
         return embed
