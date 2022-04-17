@@ -30,7 +30,7 @@
         "prefix": [
             {
                 "id": 0,
-                "title": "prefix *",
+                "title": "prefix [new prefix]",
                 "text": "Use the Surah number and the Ayah number to get the Ayah in the Surah you want separated by a colon.",
                 "example": "~prefix *"
             }],
@@ -62,7 +62,16 @@
                 "example": "~tQuran 4:5-15 en"
             }
         ],
-        "languages": [
+
+        "languages":[
+            {
+                "id": 0,
+                "title": "languages",
+                "text": "This command separately will bring back the languages the bot can bring back translated.",
+                "example": "~languages"
+            }
+        ],
+        "languages_data": [
             {
                 "lang_name": "english",
                 "lang_code": "en"
