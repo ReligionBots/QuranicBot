@@ -59,7 +59,7 @@ class Help(commands.Cog):
                 if 'languages' in key:
                     value =""
                     embed = self.setInitEmbed(ctx)
-                    for i in self.data['helpFull'][key]:
+                    for i in self.data['helpFull'][key + '_data']:
                         embed.add_field(name=f"code: {i['lang_code']}", value=f"name: {i['lang_name']}", inline=True)
                     embed.timestamp = datetime.datetime.now().astimezone()
                     await ctx.send(embed=embed)
