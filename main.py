@@ -13,7 +13,7 @@ ext_data = ut.readJSON(ut.directory['extJSON'])
 
     
 # we make the bot and put the prefix
-bot = commands.Bot(command_prefix=ut.get_prefix_1, activity = discord.Game(name="Use "+ut.get_prefix_1+"help"))
+bot = commands.Bot(command_prefix=ut.get_prefix_1, activity = discord.Game(name=f"Use {ut.get_prefix_1}help"))
 bot.remove_command("help") # for removing the main help command
 
 
